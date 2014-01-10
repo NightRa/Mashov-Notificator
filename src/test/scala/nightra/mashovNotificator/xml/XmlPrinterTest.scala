@@ -2,7 +2,6 @@
 package nightra.mashovNotificator.xml
 
 import org.scalatest.{Matchers, FlatSpec}
-import nightra.mashovNotificator.xml.{XML, Tag, Attribute, XmlPrinter}
 import XmlPrinter._
 import nightra.mashovNotificator.util.Printer._
 
