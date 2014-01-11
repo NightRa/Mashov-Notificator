@@ -16,22 +16,22 @@ object TestRequestRun extends App {
   import runner._
   import requestRunner._
 
-  val id = ""
+  val id = 0
   val password = ""
   val school = 0
   val year = 2014
 
   val loginRequest = LoginRequest(id, password, school, year)
   val tickFuture: Future[TickResponse] = runRequest(TickRequest)
-  val sessionFuture: Future[LoginResponse] = runRequest(loginRequest) 
-  
-  
-  val keyFuture = for{
+  val sessionFuture: Future[LoginResponse] = runRequest(loginRequest)
+
+
+  val keyFuture = for {
     TickResponse(ticks) <- tickFuture
-    LoginResponse(session,_) <- sessionFuture
-  }yield RequestKeyGenerator.generateKey(id.toInt,school,year,session,ticks)
-  
-  keyFuture.onComplete{
+    LoginResponse(session, _) <- sessionFuture
+  } yield RequestKeyGenerator.generateKey(id, school, year, session, ticks)
+
+  keyFuture.onComplete {
     key =>
       println(key)
       system.shutdown()
