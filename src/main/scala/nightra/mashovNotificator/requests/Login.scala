@@ -11,7 +11,7 @@ object LoginResponse {
   import spray.json.DefaultJsonProtocol._
   import spray.json.lenses.JsonLenses._
   implicit object LoginResponseJsonReader extends RootJsonReader[LoginResponse]{
-    def read(json: JsValue) = {
+    def read(json: JsValue): LoginResponse = {
       val rootLens = 'loginInfo / element(0)
       val sessionLens = rootLens / 'session
       val userTypeLens = rootLens / 'usertype
@@ -24,7 +24,7 @@ object LoginResponse {
 
 case class LoginRequest(id: String, password: String, school: Int, year: Int) extends Request[LoginResponse] {
   def toXML =
-    Tag("Login", "", "http://tempuri.org/", Seq(
+    Tag("Login", "", "", Seq(
       Tag("id", id),
       Tag("pass", password),
       Tag("CurrentYearS", school.toString + year.toString),

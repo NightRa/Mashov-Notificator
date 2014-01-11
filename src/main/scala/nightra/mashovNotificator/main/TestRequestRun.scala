@@ -1,10 +1,13 @@
 //Created By Ilan Godik
 package nightra.mashovNotificator.main
 
-import nightra.mashovNotificator.requests.LoginRequest
+import nightra.mashovNotificator.requests._
 import nightra.mashovNotificator.network.RequestRunner
+import scala.concurrent.Future
+import nightra.mashovNotificator.requests.LoginRequest
 
-object TestRequestRun extends App{ self =>
+object TestRequestRun extends App {
+  self =>
   val runner = new DefaultRunner {}
   val requestRunner = new RequestRunner {
     val runner = self.runner
@@ -18,12 +21,19 @@ object TestRequestRun extends App{ self =>
   val school = 0
   val year = 2014
 
-  val request = LoginRequest(id,password,school,year)
-  val response = runRequest(request)
-
-  response.onComplete{
-    res =>
-      println(res)
+  val loginRequest = LoginRequest(id, password, school, year)
+  val tickFuture: Future[TickResponse] = runRequest(TickRequest)
+  val sessionFuture: Future[LoginResponse] = runRequest(loginRequest) 
+  
+  
+  val keyFuture = for{
+    TickResponse(ticks) <- tickFuture
+    LoginResponse(session,_) <- sessionFuture
+  }yield RequestKeyGenerator.generateKey(id.toInt,school,year,session,ticks)
+  
+  keyFuture.onComplete{
+    key =>
+      println(key)
       system.shutdown()
   }
 }
