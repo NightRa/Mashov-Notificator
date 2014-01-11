@@ -24,7 +24,7 @@ object LoginResponse {
 
 case class LoginRequest(id: Int, password: String, school: Int, year: Int) extends Request[LoginResponse] {
   def toXML =
-    Tag("Login", "", "", Seq(
+    Tag("Login", children = Seq(
       Tag("id", id.toString),
       Tag("pass", password),
       Tag("CurrentYearS", school.toString + year.toString),
