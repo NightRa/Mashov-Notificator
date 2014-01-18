@@ -5,11 +5,20 @@ import nightra.mashovNotificator.xml.{XmlPrinter, XML, Tag}
 import spray.http.{MediaTypes, HttpEntity, HttpRequest}
 import spray.client.pipelining._
 import spray.http.HttpHeaders.RawHeader
+import spray.json.{JsValue, RootJsonReader}
 
+/**
+ * Must have an appropriate reader
+ **/
 trait Response
 
 trait Request[Resp <: Response] {
   def toXML: Tag
+}
+
+trait ResponseCompanion[T <: Response] {
+//  def readFromJson:JsValue => T
+  implicit val reader:RootJsonReader[T]
 }
 
 object Request{

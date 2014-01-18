@@ -10,6 +10,7 @@ import spray.client.pipelining._
 import nightra.mashovNotificator.requests.{Response, Request}
 import Request._
 import nightra.mashovNotificator.main.Runner
+import spray.httpx.unmarshalling.FromResponseUnmarshaller
 
 trait RequestRunner {
   val runner: Runner
@@ -18,7 +19,7 @@ trait RequestRunner {
   def setContentType: ContentType => HttpResponse => HttpResponse =
     contentType => resp => resp.withEntity(HttpEntity(contentType, resp.entity.data)) 
   
-  def soapPipeline[Resp <: Response : RootJsonReader]: HttpRequest => Future[Resp] = (
+  def soapPipeline[Resp <: Response : FromResponseUnmarshaller]: HttpRequest => Future[Resp] = (
     sendReceive
       ~> setContentType(ContentTypes.`application/json`)
       ~> unmarshal[Resp]
