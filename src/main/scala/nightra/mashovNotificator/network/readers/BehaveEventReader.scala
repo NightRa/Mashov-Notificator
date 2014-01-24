@@ -7,8 +7,6 @@ import spray.json.DefaultJsonProtocol._
 import spray.json.lenses.JsonLenses._
 
 object BehaveEventReader extends JsonReader[BehaveEvent]{
-
-
   def read(json: JsValue):BehaveEvent = {
     val studentID = json.extract[Int]("studentId")
     val lessonID = json.extract[Int]("lessonId")
