@@ -1,5 +1,5 @@
 //Created By Ilan Godik
-package nightra.mashovNotificator.requests
+package nightra.mashovNotificator.network.logic
 
 case class Key(key:String) extends AnyVal
 

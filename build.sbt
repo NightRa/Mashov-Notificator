@@ -2,7 +2,7 @@ name := "Mashov-Notificator"
 
 version := "1.0"
 
-scalaVersion := "2.10.2"
+scalaVersion := "2.10.3"
 
 initialCommands in console := "import scalaz._, Scalaz._, syntax.all._"
 
@@ -31,8 +31,4 @@ unmanagedJars in Compile += Attributed.blank(file(System.getenv("JAVA_HOME") + "
 libraryDependencies += "net.databinder.dispatch" %% "dispatch-core" % "0.11.0"
 
 libraryDependencies += "org.scalaz" %% "scalaz-core" % "7.0.5"
-
-libraryDependencies += "org.scalaz" %% "scalaz-xml" % "7.0.5"
-
-
 

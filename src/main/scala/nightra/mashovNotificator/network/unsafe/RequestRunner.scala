@@ -1,16 +1,15 @@
 //Created By Ilan Godik
-package nightra.mashovNotificator.network
+package nightra.mashovNotificator.network.unsafe
 
 import scala.concurrent.Future
 import spray.http._
 import spray.json._
 import spray.httpx.SprayJsonSupport._
 import spray.client.pipelining._
-
-import nightra.mashovNotificator.requests.{Response, Request}
-import Request._
-import nightra.mashovNotificator.main.Runner
 import spray.httpx.unmarshalling.FromResponseUnmarshaller
+import nightra.mashovNotificator.main.Runner
+import nightra.mashovNotificator.network.{Request, Response}
+import nightra.mashovNotificator.network.Request._
 
 trait RequestRunner {
   val runner: Runner

@@ -1,11 +1,11 @@
 //Created By Ilan Godik
-package nightra.mashovNotificator.requests
+package nightra.mashovNotificator.network
 
 import nightra.mashovNotificator.xml.{XmlPrinter, XML, Tag}
 import spray.http.{MediaTypes, HttpEntity, HttpRequest}
 import spray.client.pipelining._
 import spray.http.HttpHeaders.RawHeader
-import spray.json.{JsValue, RootJsonReader}
+import spray.json.RootJsonReader
 
 /**
  * Must have an appropriate reader

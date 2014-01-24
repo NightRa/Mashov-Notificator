@@ -1,24 +1,14 @@
 //Created By Ilan Godik
-package nightra.mashovNotificator.requests
+package nightra.mashovNotificator.network.requests
 
 import nightra.mashovNotificator.xml.Tag
+import nightra.mashovNotificator.network.{ResponseCompanion, Response, Request}
+import nightra.mashovNotificator.network.readers.LoginResponseReader
 
 case class LoginResponse(session: Int, userType: Int) extends Response
 
 object LoginResponse extends ResponseCompanion[LoginResponse]{
-  import spray.json._
-  import spray.json.DefaultJsonProtocol._
-  import spray.json.lenses.JsonLenses._
-
-  implicit object reader extends RootJsonReader[LoginResponse] {
-    def read(json: JsValue): LoginResponse = {
-      val root = 'loginInfo / element(0)
-      val session = json.extract[String](root / 'session).toInt
-      val userType = json.extract[String](root / 'usertype).toInt
-      LoginResponse(session, userType)
-    }
-  }
-
+  implicit val reader = LoginResponseReader
 }
 
 case class LoginRequest(id: Int, password: String, school: Int, year: Int) extends Request[LoginResponse] {
