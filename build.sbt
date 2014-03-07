@@ -14,7 +14,7 @@ retrieveManaged := false
 
 initialCommands in console := "import scalaz._, Scalaz._, syntax.all._"
 
-scalacOptions += "-feature"
+scalacOptions ++= Seq("-feature", "-deprecation")
 
 libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.2.3"
 
@@ -28,16 +28,12 @@ libraryDependencies += "org.scalatest" %% "scalatest" % "2.0" % "test"
 
 libraryDependencies += "org.scalafx" %% "scalafx" % "8.0.0-M4-SNAPSHOT"
 
-unmanagedJars in Compile += Attributed.blank(file(System.getenv("JAVA_HOME") + "/jre/lib/jfswt.jar"))
-
-libraryDependencies += "net.databinder.dispatch" %% "dispatch-core" % "0.11.0"
-
 libraryDependencies += "org.scalaz" %% "scalaz-core" % "7.0.5"
-
-libraryDependencies += "org.scalaz" %% "scalaz-effect" % "7.0.5"
 
 libraryDependencies += "org.scalaz" %% "scalaz-typelevel" % "7.0.5"
 
-libraryDependencies += "org.scalaz" %% "scalaz-concurrent" % "7.0.5"
+//libraryDependencies += "org.scalaz" %% "scalaz-effect" % "7.0.5"
+
+//libraryDependencies += "org.scalaz" %% "scalaz-concurrent" % "7.0.5"
 
 fork := true

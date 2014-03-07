@@ -13,7 +13,7 @@
     -fx-alignment: center;
     -fx-hgap: 10;
     -fx-vgap: 20;
-    -fx-padding: 10;
+    -fx-padding: 30;
 }
 
 .event {
@@ -23,6 +23,11 @@
     -fx-border-radius: 10;
     -fx-border-width: 2;
     -fx-border-insets: -1;
+}
+
+.fields {
+    -fx-padding: 5px;
+    -fx-spacing: 5px;
 }
 
 .event-blue {
@@ -41,6 +46,8 @@
     -fx-background-radius: 10 10 0 0;
     -fx-padding: 3;
     -fx-background-insets: -2;
+    -fx-translate-y: -2;
+    -fx-alignment: top-center;
 }
 
 .header-green {
@@ -65,6 +72,8 @@
     -fx-background-color: #6BACF5;
 }
 
+/*
 .tab:hover {
     -fx-background-color: #3F8AD4;
 }
+*/

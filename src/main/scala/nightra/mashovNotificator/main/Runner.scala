@@ -9,7 +9,7 @@ trait Runner {
   implicit def executionContent: ExecutionContext
 }
 
-trait DefaultRunner extends Runner {
-  implicit val system = ActorSystem()
+class DefaultRunner extends Runner {
+  implicit val system: ActorSystem = ActorSystem()
   implicit def executionContent: ExecutionContext = system.dispatcher
 }

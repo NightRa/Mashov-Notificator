@@ -1,15 +1,15 @@
 //Created By Ilan Godik
 package nightra.mashovNotificator.main
 
-import nightra.mashovNotificator.network.requests._
+import nightra.{mashovNotificator => m}
+import m.network.requests._
+import nightra.mashovNotificator.network.logic.{Key, RequestKeyGenerator}
+import m.network.unsafe.RequestRunner
+import m.data.Credentials
 import scala.concurrent.Future
-import nightra.mashovNotificator.network.requests.BehaveEventsRequest
-import nightra.mashovNotificator.network.requests.LoginRequest
-import nightra.mashovNotificator.network.logic.RequestKeyGenerator
-import nightra.mashovNotificator.network.unsafe.RequestRunner
 
-object TestRequestRun extends App {
-  val mainRunner = new DefaultRunner {}
+class TestRequestRun {
+  val mainRunner = new DefaultRunner
   val requestRunner = new RequestRunner {
     val runner = mainRunner
   }
@@ -17,72 +17,44 @@ object TestRequestRun extends App {
   import mainRunner._
   import requestRunner._
 
-  val id = 316315332
-  val password = "v2mv7h"
-  val school = 340208
-  val year = 2014
+  val id = ???
+  val password = ???
+  val school = ???
+  val year = ???
 
-  val loginRequest = LoginRequest(id, password, school, year)
+  val credentials = Credentials(id, password, school, year)
 
-  val startTime = System.currentTimeMillis()
-  println(s"Starting Requests at:0")
+  def getKey(credentials: Credentials)(ticks: Long)(session: Int) =
+    RequestKeyGenerator.generateKey(credentials, session, ticks)
 
-  val tickFuture: Future[TickResponse] = runRequest(TickRequest)
-  val sessionFuture: Future[LoginResponse] = runRequest(loginRequest)
+  def requestKey(credentials: Credentials) = {
+    val tickFuture: Future[TickResponse] = runRequest(TickRequest)
+    val sessionFuture: Future[LoginResponse] = runRequest(LoginRequest(credentials))
 
-  val requestsRun = System.currentTimeMillis()
-
-  val keyFuture = for {
-    TickResponse(ticks) <- tickFuture
-    LoginResponse(session, _) <- sessionFuture
-  } yield RequestKeyGenerator.generateKey(id, school, year, session, ticks)
-
-  val behaveEventsFuture = for {
-    key <- keyFuture
-    behaveRequest = BehaveEventsRequest(id, key)
-    _ = println(s"Initiated Behave request at:$timeFromStart")
-    behaveEvents <- runRequest(behaveRequest)
-  } yield behaveEvents
-
-  val gradesFuture = for {
-    key <- keyFuture
-    gradesRequest = GradesRequest(id, key)
-    _ = println(s"Initiated Grades request at:$timeFromStart")
-    gradesEvents <- runRequest(gradesRequest)
-  } yield gradesEvents
-  
-  println(s"Requests initiated at:${requestsRun - startTime}")
-
-  tickFuture.onComplete(const(println(statusMessage("ticks"))))
-
-  sessionFuture.onComplete(const(println(statusMessage("session"))))
-
-  keyFuture.onComplete {
-    key =>
-      println(statusMessage("key"))
-      println(key)
+    for {
+      TickResponse(ticks) <- tickFuture
+      LoginResponse(session, _) <- sessionFuture
+    } yield getKey(credentials)(ticks)(session)
   }
 
-  behaveEventsFuture.onComplete {
-    behaveEvents =>
-      println(statusMessage("Behave Events"))
-      println(behaveEvents.get.events.mkString("\r\n"))
-  }
+  // TODO: Separate behavior events request and grades request.
+  //def requestGrades(key: Key) =
 
-  gradesFuture.onComplete {
-    grades =>
-      println(statusMessage("Grades Events"))
-      println(grades.get.grades.mkString("\r\n"))
-  }
+  def getData(credentials: Credentials): (Future[GradesResponse], Future[BehaveEventsResponse]) = {
+    val keyFuture = requestKey(credentials)
 
-  for{
-    _ <- behaveEventsFuture
-    _ <- gradesFuture
-  }{
-    system.shutdown()
-  }
+    val behaveEventsFuture = for {
+      key <- keyFuture
+      behaveRequest = BehaveEventsRequest(key.credentials.id, key)
+      behaveEvents <- runRequest(behaveRequest)
+    } yield behaveEvents
 
-  def timeFromStart = System.currentTimeMillis() - startTime
-  def statusMessage(topic: String) = s"Got $topic at:$timeFromStart"
-  def const[A, B](b: => B): (A => B) = a => b
+    val gradesFuture = for {
+      key <- keyFuture
+      gradesRequest = GradesRequest(key.credentials.id, key)
+      gradesEvents <- runRequest(gradesRequest)
+    } yield gradesEvents
+
+    (gradesFuture, behaveEventsFuture)
+  }
 }
