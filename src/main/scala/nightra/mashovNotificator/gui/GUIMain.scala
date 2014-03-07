@@ -39,9 +39,11 @@ object GUIMain extends JFXApp {
 
   import requestRunner.mainRunner._
 
-  val (gradesFuture, behaveFuture) = requestRunner.getData(requestRunner.credentials)
+  val keyFuture = requestRunner.requestKey(requestRunner.credentials)
+  val gradesFuture = keyFuture.flatMap(requestRunner.requestGrades)
+  val behaviorFuture = keyFuture.flatMap(requestRunner.requestBehaviorEvents)
   val grades = gradesFuture.map(DomainMorphism[GradesResponse, Seq[Grade]])
-  val behaviorEvents = behaveFuture.map(DomainMorphism[BehaveEventsResponse, Seq[BehaviorEvent]])
+  val behaviorEvents = behaviorFuture.map(DomainMorphism[BehaveEventsResponse, Seq[BehaviorEvent]])
 
   val nodes = for {
     grades <- grades

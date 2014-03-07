@@ -3,7 +3,7 @@ package nightra.mashovNotificator.main
 
 import nightra.{mashovNotificator => m}
 import m.network.requests._
-import nightra.mashovNotificator.network.logic.{Key, RequestKeyGenerator}
+import nightra.mashovNotificator.network.logic.{KeyBundle, Key, RequestKeyGenerator}
 import m.network.unsafe.RequestRunner
 import m.data.Credentials
 import scala.concurrent.Future
@@ -24,7 +24,7 @@ class TestRequestRun {
 
   val credentials = Credentials(id, password, school, year)
 
-  def getKey(credentials: Credentials)(ticks: Long)(session: Int) =
+  private def getKey(credentials: Credentials)(ticks: Long)(session: Int) =
     RequestKeyGenerator.generateKeyBundle(credentials, session, ticks)
 
   def requestKey(credentials: Credentials) = {
@@ -37,24 +37,6 @@ class TestRequestRun {
     } yield getKey(credentials)(ticks)(session)
   }
 
-  // TODO: Separate behavior events request and grades request.
-  //def requestGrades(key: Key) =
-
-  def getData(credentials: Credentials): (Future[GradesResponse], Future[BehaveEventsResponse]) = {
-    val keyFuture = requestKey(credentials)
-
-    val behaveEventsFuture = for {
-      keyBundle <- keyFuture
-      behaveRequest = BehaveEventsRequest(keyBundle.credentials.id, keyBundle.key)
-      behaveEvents <- runRequest(behaveRequest)
-    } yield behaveEvents
-
-    val gradesFuture = for {
-      keyBundle <- keyFuture
-      gradesRequest = GradesRequest(keyBundle.credentials.id, keyBundle.key)
-      gradesEvents <- runRequest(gradesRequest)
-    } yield gradesEvents
-
-    (gradesFuture, behaveEventsFuture)
-  }
+  def requestGrades(keyBundle: KeyBundle) = runRequest(GradesRequest(keyBundle))
+  def requestBehaviorEvents(keyBundle: KeyBundle) = runRequest(BehaveEventsRequest(keyBundle))
 }
