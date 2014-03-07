@@ -25,7 +25,7 @@ class TestRequestRun {
   val credentials = Credentials(id, password, school, year)
 
   def getKey(credentials: Credentials)(ticks: Long)(session: Int) =
-    RequestKeyGenerator.generateKey(credentials, session, ticks)
+    RequestKeyGenerator.generateKeyBundle(credentials, session, ticks)
 
   def requestKey(credentials: Credentials) = {
     val tickFuture: Future[TickResponse] = runRequest(TickRequest)
@@ -44,14 +44,14 @@ class TestRequestRun {
     val keyFuture = requestKey(credentials)
 
     val behaveEventsFuture = for {
-      key <- keyFuture
-      behaveRequest = BehaveEventsRequest(key.credentials.id, key)
+      keyBundle <- keyFuture
+      behaveRequest = BehaveEventsRequest(keyBundle.credentials.id, keyBundle.key)
       behaveEvents <- runRequest(behaveRequest)
     } yield behaveEvents
 
     val gradesFuture = for {
-      key <- keyFuture
-      gradesRequest = GradesRequest(key.credentials.id, key)
+      keyBundle <- keyFuture
+      gradesRequest = GradesRequest(keyBundle.credentials.id, keyBundle.key)
       gradesEvents <- runRequest(gradesRequest)
     } yield gradesEvents
 
