@@ -4,19 +4,22 @@ package nightra.mashovNotificator.network.requests
 import nightra.mashovNotificator.xml.Tag
 import nightra.mashovNotificator.network.{ReaderCompanion, ResponseCompanion, Response, Request}
 import nightra.mashovNotificator.network.logic.{KeyBundle, Key}
-import nightra.mashovNotificator.network.readers.{BehaveEventsReader, BehaveEventReader}
+import argonaut._, Argonaut._
+
 
 case class BehaveEvent(studentID: Int, lessonID: Int, eventCode: Int, justified: Int, reporterID: Int, groupID: Int, lesson: Int,
                        lessonDate: String, name: String, justification: String, teacherName: String, subjectName: String, remarkText: String)
 
+case class BehaveEventsResponse(events: Vector[BehaveEvent]) extends Response
+
 object BehaveEvent extends ReaderCompanion[BehaveEvent] {
-  implicit val reader = BehaveEventReader
+  implicit def reader =
+    casecodec13(BehaveEvent.apply, BehaveEvent.unapply)("studentId", "lessonId", "eventCode", "justified",
+      "reporterid", "groupid", "lesson", "lessondate", "name", "justification", "teacherName", "subjectName", "remarktext")
 }
 
-case class BehaveEventsResponse(events: Seq[BehaveEvent]) extends Response
-
 object BehaveEventsResponse extends ResponseCompanion[BehaveEventsResponse] {
-  implicit val reader = BehaveEventsReader
+  implicit def reader = casecodec1(BehaveEventsResponse.apply, BehaveEventsResponse.unapply)("tblStudentAchva")
 }
 
 case class BehaveEventsRequest(id: Int, key: Key) extends Request[BehaveEventsResponse] {

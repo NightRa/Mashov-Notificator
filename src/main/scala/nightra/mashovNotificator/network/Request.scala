@@ -5,7 +5,7 @@ import nightra.mashovNotificator.xml.{XmlPrinter, XML, Tag}
 import spray.http.{MediaTypes, HttpEntity, HttpRequest}
 import spray.client.pipelining._
 import spray.http.HttpHeaders.RawHeader
-import spray.json.{JsonReader, RootJsonReader}
+import argonaut.DecodeJson
 
 /**
  * Must have an appropriate reader
@@ -16,16 +16,16 @@ trait Request[Resp <: Response] {
   def toXML: Tag
 }
 
-trait ReaderCompanion[T]{
-  implicit val reader:JsonReader[T]
+trait ReaderCompanion[T] {
+  implicit def reader: DecodeJson[T]
 }
 
-trait ResponseCompanion[T <: Response] extends ReaderCompanion[T]{
-  implicit val reader:RootJsonReader[T]
+trait ResponseCompanion[T <: Response] extends ReaderCompanion[T] {
+  implicit def reader: DecodeJson[T]
 }
 
-object Request{
-  def addNS(xml:Tag): XML = xml.copy(namespace = "http://tempuri.org/")
+object Request {
+  def addNS(xml: Tag): XML = xml.copy(namespace = "http://tempuri.org/")
 
   def wrapInSoap(body: String): String =
     s"""<?xml version="1.0" encoding="utf-8"?>
@@ -38,7 +38,7 @@ object Request{
   def buildSoapRequest(body: String, name: String): HttpRequest =
     Post("http://pda.mashov.info/mashovcellolarstudents/json.asmx",
       HttpEntity(MediaTypes.`text/xml`, body))
-      .withHeaders(RawHeader("SOAPAction",s"http://tempuri.org/$name"))
+      .withHeaders(RawHeader("SOAPAction", s"http://tempuri.org/$name"))
 
   def prepareRequest(req: Request[_]): HttpRequest = {
     val xml = req.toXML
@@ -48,7 +48,7 @@ object Request{
     val soapXML = wrapInSoap(stringBody)
 
     val name = xml.label
-    val soapRequest = buildSoapRequest(soapXML,name)
+    val soapRequest = buildSoapRequest(soapXML, name)
     soapRequest
   }
 }

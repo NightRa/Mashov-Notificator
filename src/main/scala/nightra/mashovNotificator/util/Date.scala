@@ -1,9 +1,11 @@
 //Created By Ilan Godik
 package nightra.mashovNotificator.util
 
-import scalaz.{Order, Show}
+import scalaz._
 import scalaz.syntax.semigroup._
 import Order.orderBy
+import atto._
+import Atto._
 
 case class Date(day: Int, month: Int, year: Int) {
   override def toString = f"$day%02d/$month%02d/$year%04d"
@@ -17,9 +19,23 @@ object Date {
   implicit val dateShow: Show[Date] = Show.showFromToString
   implicit val dateOrder: Order[Date] = orderBy(year) |+| orderBy(month) |+| orderBy(day)
 
-  // TODO: Implement date parsing.
-  // 2014-01-09T00:00:00 -> Date(09,01,2014)
-  def parseDate: String => Date =
-    _ => Date(20, 2, 2014)
+  // 2014-01-09T00:00:00 -> Right(Date(09,01,2014))
+  // TODO: (Date parsing): ABSOLUTELY BAD. SHOULD PASS ERROR INSTEAD OF ASSUMING FORMAT WAS CORRECT.
+  def parseDate: String => Date = in =>
+    dateParser.parseOnly(in).option match {
+      case Some(x) => x
+      case None => throw new IllegalArgumentException(s"Invalid date: $in")
+    }
+
+  def dateParser = (for {
+    year <- int <~ char('-')
+    month <- int <~ char('-')
+    day <- int
+  } yield Date(day, month, year)).filter(isCorrectDate)
+
+  // TODO: Date validation is very simplistic
+  def isCorrectDate(date: Date): Boolean =
+    date.month >= 1 && date.month <= 12 && date.day >= 1 && date.day <= 31
+
 
 }

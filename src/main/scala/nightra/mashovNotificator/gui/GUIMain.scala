@@ -12,6 +12,7 @@ import m.util.Date
 import m.language.DefaultEventStrings
 import m.main.TestRequestRun
 import m.network.requests.{BehaveEvent, GradeResponse, BehaveEventsResponse, GradesResponse}
+import java.io.PrintWriter
 
 object GUIMain extends JFXApp {
   val eventStrings = DefaultEventStrings
@@ -19,7 +20,7 @@ object GUIMain extends JFXApp {
   def eventNodes(events: Seq[Event]) = events.map(GUIInstances.eventGUI.toNode)
 
   // TODO: Remove temporary stub.
-  val defaultEvents = Seq(Grade("ספרות", "מבחן מחצית", 97), BehaviorEvent("אנגלית", Date(29, 1, 2014), "העדרות", "אוניברסיטה"))
+  val defaultEvents = Seq(Grade("ספרות", "מבחן מחצית", 97, Date(29, 1, 2014)), BehaviorEvent("אנגלית", Date(29, 1, 2014), "העדרות", "אוניברסיטה"))
 
   val eventNodesProperty: ObjectProperty[Seq[Node]] = ObjectProperty(eventNodes(defaultEvents))
 
@@ -45,16 +46,25 @@ object GUIMain extends JFXApp {
   val grades = gradesFuture.map(DomainMorphism[GradesResponse, Seq[Grade]])
   val behaviorEvents = behaviorFuture.map(DomainMorphism[BehaveEventsResponse, Seq[BehaviorEvent]])
 
-  val nodes = for {
+  val events = for {
     grades <- grades
     behaviorEvents <- behaviorEvents
-  } yield eventNodes(merge(grades, behaviorEvents))
+  } yield combineEvents(grades, behaviorEvents)
+
+  val nodes = events.map(eventNodes)
 
   nodes.foreach(setNodes)
 
-  def merge[A](seq1: Seq[A], seq2: Seq[A]): Seq[A] = (seq1 zip seq2).flatMap {
-    case (a, b) => List(a, b)
-  }
+  def combineEvents(events: Seq[Event]*): Seq[Event] = events.flatten.sortBy(_.date)(Date.dateOrder.reverseOrder.toScalaOrdering)
+
+  // TODO: Remove pickling test.
+  /*grades.foreach{
+    completeGrades =>
+    val outputStream = new PrintWriter("grades-json.save")
+    val encoded = completeGrades.map(grade => grade.copy(subject = grade.subject.trim)).pickle.value
+    outputStream.write(encoded)
+    outputStream.close()
+  }*/
 
 
   override def stopApp() = requestRunner.mainRunner.system.shutdown()

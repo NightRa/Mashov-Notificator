@@ -3,13 +3,22 @@ package nightra.mashovNotificator.network.requests
 
 import nightra.mashovNotificator.xml.Tag
 import nightra.mashovNotificator.network.{ResponseCompanion, Response, Request}
-import nightra.mashovNotificator.network.readers.LoginResponseReader
 import nightra.mashovNotificator.data.Credentials
+import argonaut._
+import Argonaut._
 
 case class LoginResponse(session: Int, userType: Int) extends Response
 
 object LoginResponse extends ResponseCompanion[LoginResponse] {
-  implicit val reader = LoginResponseReader
+  implicit def reader = DecodeJson {
+    c => {
+      val ob = (c --\ "loginInfo").downArray
+      for {
+        session <- (ob --\ "session").as[Int]
+        userType <- (ob --\ "usertype").as[Int]
+      } yield LoginResponse(session, userType)
+    }
+  }
 }
 
 case class LoginRequest(id: Int, password: String, school: Int, year: Int) extends Request[LoginResponse] {
