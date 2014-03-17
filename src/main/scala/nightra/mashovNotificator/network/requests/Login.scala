@@ -10,6 +10,9 @@ import Argonaut._
 case class LoginResponse(session: Int, userType: Int) extends Response
 
 object LoginResponse extends ResponseCompanion[LoginResponse] {
+  /**
+   * {"loginInfo":[{"session":"3750","usertype":"1"}]} -> LoginResponse(3750,1)
+   **/
   implicit def reader = DecodeJson {
     c => {
       val ob = (c --\ "loginInfo").downArray
