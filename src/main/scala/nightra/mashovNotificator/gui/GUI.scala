@@ -2,12 +2,13 @@
 package nightra.mashovNotificator.gui
 
 import scalafx.geometry.{Insets, Pos, NodeOrientation}
-import scalafx.scene.control.{Tab, TabPane}
+import scalafx.scene.control.{ScrollPane, Tab, TabPane}
 import scalafx.scene.layout._
 import scalafx.scene.control.TabPane.TabClosingPolicy
 import scalafx.scene.image.{Image, ImageView}
 import scalafx.beans.property.ObjectProperty
 import scalafx.scene.Node
+import scalafx.scene.control.ScrollPane.ScrollBarPolicy
 
 class GUI(events: ObjectProperty[Seq[Node]]) extends StackPane {
   self =>
@@ -21,10 +22,18 @@ class GUI(events: ObjectProperty[Seq[Node]]) extends StackPane {
     new TabPane {
       def mainTab = new Tab {
         text = tabHeadings.head
-        content = new FlowPane {
-          styleClass = Seq("contentTab")
-          content = events.get
-          events.onChange(content = events.get)
+        content = new ScrollPane() {
+          scrollPaneSelf =>
+          content = new FlowPane {
+            styleClass = Seq("contentTab")
+            content = events.get
+            events.onChange(content = events.get)
+
+            prefHeight <== scrollPaneSelf.height
+            prefWidth <== scrollPaneSelf.width
+          }
+          hbarPolicy = ScrollBarPolicy.NEVER
+          vbarPolicy = ScrollBarPolicy.AS_NEEDED
         }
       }
 
