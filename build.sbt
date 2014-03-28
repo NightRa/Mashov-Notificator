@@ -34,7 +34,7 @@ libraryDependencies += "org.tpolecat" %% "atto" % "0.1"
 
 libraryDependencies += "io.argonaut" %% "argonaut" % "6.0.3"
 
-//libraryDependencies += "org.scalaz" %% "scalaz-effect" % "7.0.6"
+libraryDependencies += "org.scalaz" %% "scalaz-effect" % "7.0.6"
 
 //libraryDependencies += "org.scalaz" %% "scalaz-concurrent" % "7.0.6"
 
