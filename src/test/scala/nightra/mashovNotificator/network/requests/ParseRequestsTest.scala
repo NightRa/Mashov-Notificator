@@ -1,11 +1,11 @@
 //Created By Ilan Godik
 package nightra.mashovNotificator.network.requests
 
-import org.scalatest.{Matchers, FlatSpec}
+import nightra.mashovNotificator.Test
 import argonaut.Argonaut._
 import scalaz.\/.right
 
-class ParseRequestsTest extends FlatSpec with Matchers {
+class ParseRequestsTest extends Test {
   "Parsing BehaveEvent" should "parse it correctly" in {
     val input = """{
                   |        "studentId": 376308302,

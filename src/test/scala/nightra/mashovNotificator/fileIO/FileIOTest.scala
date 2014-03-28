@@ -1,10 +1,10 @@
 package nightra.mashovNotificator.fileIO
 
-import org.scalatest.{Matchers, FlatSpec}
 import nightra.mashovNotificator.fileIO.FileIO._
+import nightra.mashovNotificator.Test
 import java.io.File
 
-class FileIOTest extends FlatSpec with Matchers {
+class FileIOTest extends Test {
   val content = "Hello world!\r\nHow are you?"
   def testFile(name: String) = new File(s"res/test/$name.test")
 

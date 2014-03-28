@@ -1,13 +1,10 @@
 package nightra.mashovNotificator.model
 
-import nightra.mashovNotificator.model.Grade._
-import nightra.mashovNotificator.model.BehaviorEvent._
 import nightra.mashovNotificator.util.Date
-import nightra.mashovNotificator.util.Date._
-import org.scalatest.{Matchers, FlatSpec}
+import nightra.mashovNotificator.Test
 import argonaut._, Argonaut._
 
-class EventModelJsonTest extends FlatSpec with Matchers {
+class EventModelJsonTest extends Test {
   val date = Date(12, 3, 2014)
   val grade = Grade("English", "Mid-Exam", 100, date)
   val behaviorEvent = BehaviorEvent("English", "miss", "None", date)

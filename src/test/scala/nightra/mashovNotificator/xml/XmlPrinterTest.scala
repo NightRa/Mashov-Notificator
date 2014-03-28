@@ -1,11 +1,11 @@
 //Created By Ilan Godik
 package nightra.mashovNotificator.xml
 
-import org.scalatest.{Matchers, FlatSpec}
 import XmlPrinter._
 import nightra.mashovNotificator.util.Printer._
+import nightra.mashovNotificator.Test
 
-class XmlPrinterTest extends FlatSpec with Matchers {
+class XmlPrinterTest extends Test {
   val att1 = Attribute("xmlns", "tempuri.org")
   val att2 = Attribute("name", "my name")
   val attributes = Vector(att1, att2)
