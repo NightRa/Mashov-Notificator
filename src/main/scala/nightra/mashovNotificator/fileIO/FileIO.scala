@@ -5,7 +5,7 @@ import scalaz.effect.IO
 import java.io.{PrintWriter, File}
 import scala.io.Source
 import scalaz.\/
-import argonaut._, Argonaut._
+import argonaut.{DecodeJson, Parse}
 
 object FileIO {
   def writeFile(content: String, file: File): IO[Unit] = IO {
