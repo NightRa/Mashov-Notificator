@@ -6,10 +6,10 @@ import java.io.File
 
 class FileIOTest extends Test {
   val content = "Hello world!\r\nHow are you?"
-  def testFile(name: String) = new File(s"res/test/$name.test")
+
 
   "Write-Read file" should "have an identity." in {
-    val file = testFile("read-write")
+    val file = testFile("read-write.test")
 
     val writeRead = for {
       _ <- writeFile(content, file)
@@ -21,7 +21,7 @@ class FileIOTest extends Test {
   }
 
   "Delete file" should "return true if the file was deleted successfully." in {
-    val file = testFile("delete")
+    val file = testFile("delete.test")
 
     val writeDelete = for {
       _ <- writeFile(content, file)
@@ -32,7 +32,7 @@ class FileIOTest extends Test {
   }
 
   "Delete file" should "return false if there was no file to be deleted." in {
-    val file = testFile("non-existing")
+    val file = testFile("non-existing.test")
 
     val writeDelete = for {
       _ <- deleteFile(file)

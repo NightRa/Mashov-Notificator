@@ -4,6 +4,8 @@ package nightra.mashovNotificator.fileIO
 import scalaz.effect.IO
 import java.io.{PrintWriter, File}
 import scala.io.Source
+import scalaz.\/
+import argonaut._, Argonaut._
 
 object FileIO {
   def writeFile(content: String, file: File): IO[Unit] = IO {
@@ -21,4 +23,7 @@ object FileIO {
   def deleteFile(file: File): IO[Boolean] = IO {
     file.delete()
   }
+
+  def readJson[A: DecodeJson](file: File): IO[String \/ A] =
+    readFile(file).map(Parse.decodeEither[A])
 }
