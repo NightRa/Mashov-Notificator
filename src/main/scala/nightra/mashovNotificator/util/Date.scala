@@ -6,6 +6,7 @@ import scalaz.syntax.semigroup._
 import Order.orderBy
 import atto._
 import Atto._
+import argonaut.Argonaut.casecodec3
 
 case class Date(day: Int, month: Int, year: Int) {
   override def toString = f"$day%02d/$month%02d/$year%04d"
@@ -18,6 +19,10 @@ object Date {
 
   implicit val dateShow: Show[Date] = Show.showFromToString
   implicit val dateOrder: Order[Date] = orderBy(year) |+| orderBy(month) |+| orderBy(day)
+
+  implicit val jsonCodec = casecodec3(Date.apply, Date.unapply)("day", "month", "year")
+
+
 
   // 2014-01-09T00:00:00 -> Right(Date(09,01,2014))
   // TODO: (Date parsing): ABSOLUTELY BAD. SHOULD PASS ERROR INSTEAD OF ASSUMING FORMAT WAS CORRECT.

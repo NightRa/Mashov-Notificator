@@ -20,7 +20,7 @@ object GUIMain extends JFXApp {
   def eventNodes(events: Seq[Event]) = events.map(GUIInstances.eventGUI.toNode)
 
   // TODO: Remove temporary stub.
-  val defaultEvents = Seq(Grade("ספרות", "מבחן מחצית", 97, Date(29, 1, 2014)), BehaviorEvent("אנגלית", Date(29, 1, 2014), "העדרות", "אוניברסיטה"))
+  val defaultEvents = Seq(Grade("ספרות", "מבחן מחצית", 97, Date(29, 1, 2014)), BehaviorEvent("אנגלית", "העדרות", "אוניברסיטה", Date(29, 1, 2014)))
 
   val eventNodesProperty: ObjectProperty[Seq[Node]] = ObjectProperty(eventNodes(defaultEvents))
 

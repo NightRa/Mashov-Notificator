@@ -22,7 +22,7 @@ object DomainMorphism {
 
   implicit def behaviorDomain = new DomainMorphism[BehaveEvent, BehaviorEvent] {
     def convert = resp =>
-      BehaviorEvent(resp.subjectName, Date.parseDate(resp.lessonDate), resp.name, resp.justification)
+      BehaviorEvent(resp.subjectName, resp.name, resp.justification, Date.parseDate(resp.lessonDate))
   }
 
   implicit def behaviorsMorphism = new DomainMorphism[BehaveEventsResponse, Seq[BehaviorEvent]] {
