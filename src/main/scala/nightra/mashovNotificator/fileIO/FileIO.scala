@@ -41,6 +41,8 @@ object FileIO {
 
   def sibling(file: File, sibling: String): File = file.toPath.resolveSibling(sibling).toFile
 
+  def name(file: File): String = file.getName
+
   def readJson[A: DecodeJson](file: File): IO[String \/ A] =
     readFile(file).map(Parse.decodeEither[A])
 }
