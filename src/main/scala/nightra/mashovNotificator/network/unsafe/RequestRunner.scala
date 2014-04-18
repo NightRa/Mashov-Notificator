@@ -1,33 +1,36 @@
 //Created By Ilan Godik
 package nightra.mashovNotificator.network.unsafe
 
-import scala.concurrent.Future
+import scala.concurrent.{ExecutionContext, Future}
 import spray.http._
 import spray.client.pipelining._
 import spray.httpx.unmarshalling._
 import nightra.mashovNotificator.main.Runner
-import nightra.mashovNotificator.network.{Request, Response}
+import nightra.mashovNotificator.network.{Task, Request, Response}
 import nightra.mashovNotificator.network.Request._
 import argonaut.DecodeJson
 import argonaut.Argonaut._
 import spray.http.HttpRequest
 import spray.http.HttpResponse
+import akka.actor.ActorSystem
 
 trait RequestRunner {
-  val runner: Runner
-
-  import runner._
+  implicit val actorSystem: ActorSystem
 
   def setContentType: ContentType => HttpResponse => HttpResponse =
     contentType => resp => resp.withEntity(HttpEntity(contentType, resp.entity.data))
 
-  def soapPipeline[Resp <: Response : Unmarshaller]: HttpRequest => Future[Resp] = (
-    sendReceive
-      ~> setContentType(ContentTypes.`application/json`)
-      ~> unmarshal[Resp]
-    )
+  def soapPipeline[Resp <: Response : Unmarshaller]: HttpRequest => Task[Resp] =
+    request => Task.lift {
+      implicit executor =>
+        sendReceive
+          .~>(setContentType(ContentTypes.`application/json`)
+          .~>(unmarshal[Resp]))
+          .apply(request)
+    }
 
-  def runRequest[Resp <: Response : DecodeJson](req: Request[Resp]): Future[Resp] = {
+
+  def runRequest[Resp <: Response : DecodeJson](req: Request[Resp]): Task[Resp] = {
     val pipeline = soapPipeline[Resp](argonautJsonUnmarshaller[Resp])
     val request = prepareRequest(req)
     pipeline(request)
