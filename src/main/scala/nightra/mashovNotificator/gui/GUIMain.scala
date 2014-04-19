@@ -31,10 +31,10 @@ object GUIMain extends JFXApp {
   // TODO: Node indicating loading.
   val defaultEvents = Seq(Grade("ספרות", "מבחן מחצית", 97, Date(29, 1, 2014)), BehaviorEvent("אנגלית", "העדרות", "אוניברסיטה", Date(29, 1, 2014)))
 
-  val eventScene = new EventScene(eventsGUI(eventStrings)(defaultEvents))
+  val eventSceneController = new EventSceneController(eventsGUI(eventStrings)(defaultEvents))
 
   stage = new PrimaryStage {
-    scene = eventScene
+    scene = eventSceneController.eventsScene
   }
 
   val id = ???
@@ -50,7 +50,7 @@ object GUIMain extends JFXApp {
 
   def nodes(events: Task[Seq[Event]]) = events.map(eventsGUI(eventStrings))
 
-  val updateNodes = nodes(combinedEvents).onSuccess(eventScene.setNodes)
+  val updateNodes = nodes(combinedEvents).onSuccess(eventSceneController.setNodes)
 
   updateNodes.run(mainRunner.executionContent).unsafePerformIO()
 
