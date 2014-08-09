@@ -1,10 +1,11 @@
 //Created By Ilan Godik
-package nightra.mashovNotificator.gui
+package nightra.mashovNotificator.gui.model
+
+import javafx.scene.text.TextFlow
 
 import scalafx.scene.Node
-import scalafx.scene.layout.{VBox, HBox}
+import scalafx.scene.layout.{HBox, VBox}
 import scalafx.scene.text.Text
-import javafx.scene.text.TextFlow
 
 object Content {
   type Field = Node

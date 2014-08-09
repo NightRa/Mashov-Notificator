@@ -1,16 +1,15 @@
-//Created By Ilan Godik
-package nightra.mashovNotificator.gui
+package nightra.mashovNotificator.gui.view.mainScene
 
-import scalafx.geometry.{Insets, Pos, NodeOrientation}
-import scalafx.scene.control.{ScrollPane, Tab, TabPane}
-import scalafx.scene.layout._
-import scalafx.scene.control.TabPane.TabClosingPolicy
-import scalafx.scene.image.{Image, ImageView}
 import scalafx.beans.property.ObjectProperty
+import scalafx.geometry.{Insets, Pos, NodeOrientation}
 import scalafx.scene.Node
 import scalafx.scene.control.ScrollPane.ScrollBarPolicy
+import scalafx.scene.control.TabPane.TabClosingPolicy
+import scalafx.scene.control.{ScrollPane, Tab, TabPane}
+import scalafx.scene.image.{Image, ImageView}
+import scalafx.scene.layout.{FlowPane, StackPane}
 
-class GUI(events: ObjectProperty[Seq[Node]]) extends StackPane {
+class MainSceneContent(events: ObjectProperty[Seq[Node]]) extends StackPane {
   self =>
 
   val tabHeadings = Seq("ראשי", "מערכת שעות", "ציונים", "התנהגות", "הודעות")

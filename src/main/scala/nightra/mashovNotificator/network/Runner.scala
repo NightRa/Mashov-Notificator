@@ -1,7 +1,8 @@
 //Created By Ilan Godik
-package nightra.mashovNotificator.main
+package nightra.mashovNotificator.network
 
 import akka.actor.ActorSystem
+
 import scala.concurrent.ExecutionContext
 
 trait Runner {
@@ -9,7 +10,12 @@ trait Runner {
   implicit def executionContent: ExecutionContext
 }
 
-class DefaultRunner extends Runner {
+/**
+ * Global, Not state
+ * I see this as something that may never change,
+ * And is considered as basic as allowing function application.
+ **/
+object Runner extends Runner {
   implicit val system: ActorSystem = ActorSystem()
   implicit def executionContent: ExecutionContext = system.dispatcher
 }

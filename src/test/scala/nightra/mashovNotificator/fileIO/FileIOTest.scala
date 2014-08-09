@@ -106,4 +106,9 @@ class FileIOTest extends Test {
 
     sibling(file, siblingName) should be(expected)
   }
+
+  "File name" should "return the name without the parent folders" in {
+    val file = testFile("folder/name.test")
+    name(file) should be("name.test")
+  }
 }

@@ -1,74 +1,108 @@
 //Created By Ilan Godik
 package nightra.mashovNotificator.gui
 
-import scalafx.application.{Platform, JFXApp}
-import scalafx.application.JFXApp.PrimaryStage
-import scalafx.scene.{Node, Scene}
-import scalafx.beans.property.ObjectProperty
+import nightra.mashovNotificator.data.Credentials
+import nightra.mashovNotificator.gui.controller.MainSceneController
+import nightra.mashovNotificator.gui.view.mainScene.{Events, MainScene, MainSceneState, Loading}
+import nightra.mashovNotificator.language.DefaultEventStrings
+import nightra.mashovNotificator.model.{DomainMorphism, Event}
+import nightra.mashovNotificator.network.{Runner, Requests}
+import nightra.mashovNotificator.network.logic.KeyBundle
+import nightra.mashovNotificator.network.requests.{BehaveEventsResponse, GradesResponse}
+import nightra.mashovNotificator.util.Date
 
-import nightra.{mashovNotificator => m}
-import m.model.{DomainMorphism, Event, BehaviorEvent, Grade}
-import m.util.Date
-import m.language.DefaultEventStrings
-import m.main.TestRequestRun
-import m.network.requests.{BehaveEvent, GradeResponse, BehaveEventsResponse, GradesResponse}
-import java.io.PrintWriter
+import scalafx.application.JFXApp
+import scalafx.application.JFXApp.PrimaryStage
+import scalaz.Scalaz._
+import scalaz.concurrent.Task
+import scalaz.effect.IO
+import scalaz.{Nondeterminism, -\/, \/-}
+
+
 
 object GUIMain extends JFXApp {
-  val eventStrings = DefaultEventStrings
-  val GUIInstances = new GUIInstances(eventStrings)
-  def eventNodes(events: Seq[Event]) = events.map(GUIInstances.eventGUI.toNode)
+  // TODO: Input credentials
+  val id = ???
+  val password = ???
+  val school = ???
+  val year = ???
 
-  // TODO: Remove temporary stub.
-  val defaultEvents = Seq(Grade("ספרות", "מבחן מחצית", 97, Date(29, 1, 2014)), BehaviorEvent("אנגלית", "העדרות", "אוניברסיטה", Date(29, 1, 2014)))
+  val credentials = Credentials(id, password, school, year)
 
-  val eventNodesProperty: ObjectProperty[Seq[Node]] = ObjectProperty(eventNodes(defaultEvents))
+  // -------------------------------------------------------------------------------------------------------------------
+
+  val initialState = Loading
+
+  val mainScene = new MainScene(MainSceneController.stateToViewAction(initialState))
 
   stage = new PrimaryStage {
-    scene = new Scene(800, 600) {
-      sceneSelf =>
-      content = new GUI(eventNodesProperty) {
-        prefHeight <== sceneSelf.height
-        prefWidth <== sceneSelf.width
+    scene = mainScene
+  }
+
+  def updateSceneState(state: MainSceneState): IO[Unit] =
+    mainScene.applyViewAction(MainSceneController.stateToViewAction(state))
+
+  override def stopApp() = Runner.system.shutdown()
+
+  // -------------------------------------------------------------------------------------------------------------------
+
+
+  val keyTask: Task[KeyBundle] = retryLog(Requests.requestKey(credentials))("Key")
+  def parallelRequests(key: KeyBundle): Task[(GradesResponse, BehaveEventsResponse)] = Nondeterminism[Task].both(
+    retryLog(Requests.requestGrades(key))("Grades"),
+    retryLog(Requests.requestBehaviorEvents(key))("Behavior")
+  )
+  val eventResponses: Task[(GradesResponse, BehaveEventsResponse)] =
+    repeat(for {
+      key <- keyTask
+      result <- parallelRequests(key)
+    } yield result)("RETRYING...")
+
+  val domainEventsTask = eventResponses map {
+    case (gradesResp, behaviorResp) => (DomainMorphism(gradesResp), DomainMorphism(behaviorResp))
+  }
+
+  def retryLog[A](task: Task[A])(description: String) =
+    log(repeat(task)(s"$description failure."), s"Starting $description Task.", s"Finished $description Task.")
+
+
+  def log[A](task: Task[A], start: String, end: String): Task[A] = logTask(start) >> Task.delay(Thread.sleep(250)) >> task.onFinish(_ => logTask(end))
+
+  def logTask(message: String) = Task.delay(println(message))
+
+  def repeat[A](task: Task[A])(message: String, amount: Int = 5): Task[A] = {
+    if (amount == 0) task
+    else {
+      handle(task)(message).handleWith {
+        case _ => repeat(task)(message, amount - 1)
       }
     }
   }
 
-  def setNodes(nodes: Seq[Node]) = Platform.runLater(eventNodesProperty.set(nodes))
+  def handler(message: String): Option[Throwable] => Task[Unit] = {
+    case Some(ex) => Task.delay(println(message))
+    case None => Task.now(())
+  }
 
-  val requestRunner = new TestRequestRun
+  def handle[A](task: Task[A])(message: String): Task[A] = task.onFinish(handler(message))
 
-  import requestRunner.mainRunner._
+  val eventsTask: Task[Seq[Event]] = domainEventsTask map {
+    case (grades, behavior) => combineEvents(grades, behavior)
+  }
 
-  val keyFuture = requestRunner.requestKey(requestRunner.credentials)
-  val gradesFuture = keyFuture.flatMap(requestRunner.requestGrades)
-  val behaviorFuture = keyFuture.flatMap(requestRunner.requestBehaviorEvents)
-  val grades = gradesFuture.map(DomainMorphism[GradesResponse, Seq[Grade]])
-  val behaviorEvents = behaviorFuture.map(DomainMorphism[BehaveEventsResponse, Seq[BehaviorEvent]])
+  val updateNodesTask = eventsTask.map(events => updateSceneState(Events(events, DefaultEventStrings)))
 
-  val events = for {
-    grades <- grades
-    behaviorEvents <- behaviorEvents
-  } yield combineEvents(grades, behaviorEvents)
+  println()
 
-  val nodes = events.map(eventNodes)
-
-  nodes.foreach(setNodes)
+  Task.fork(updateNodesTask).runAsync {
+    case -\/(exception) => println(exception)
+    case \/-(io) => io.unsafePerformIO()
+  }
 
   def combineEvents(events: Seq[Event]*): Seq[Event] = events.flatten.sortBy(_.date)(Date.dateOrder.reverseOrder.toScalaOrdering)
 
-  // TODO: Remove pickling test.
-  /*grades.foreach{
-    completeGrades =>
-    val outputStream = new PrintWriter("grades-json.save")
-    val encoded = completeGrades.map(grade => grade.copy(subject = grade.subject.trim)).pickle.value
-    outputStream.write(encoded)
-    outputStream.close()
-  }*/
 
 
-  override def stopApp() = requestRunner.mainRunner.system.shutdown()
-  println()
 }
 
 

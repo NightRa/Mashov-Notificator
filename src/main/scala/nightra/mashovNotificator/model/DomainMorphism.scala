@@ -10,7 +10,7 @@ trait DomainMorphism[A, B] {
 }
 
 object DomainMorphism {
-  def apply[A, B](implicit morph: DomainMorphism[A, B]) = morph.convert
+  def apply[A, B](a: A)(implicit morph: DomainMorphism[A, B]) = morph.convert(a)
 
   implicit def gradeDomain = new DomainMorphism[GradeResponse, Grade] {
     def convert = resp => Grade(resp.subjectName, resp.name, resp.grade, Date.parseDate(resp.visibleFrom))

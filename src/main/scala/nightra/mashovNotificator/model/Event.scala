@@ -6,6 +6,9 @@ import m.util.Date
 import BehaviorEvent.{Justification, BehaviorType}
 import argonaut.Argonaut.casecodec4
 
+
+/** data Event = GradeEvent: subject,topic,grade,date | BehaviorEvent: subject,type,justification,date */
+
 sealed trait Event {
   val date: Date
 }
@@ -13,6 +16,12 @@ sealed trait Event {
 case class Grade(subject: String, topic: String, grade: Int, date: Date) extends Event
 
 case class BehaviorEvent(subject: String, `type`: BehaviorType, justification: Justification, date: Date) extends Event
+
+
+
+/**
+ * Json Codecs
+ **/
 
 object Grade {
   implicit val codec = casecodec4(Grade.apply, Grade.unapply)("subject", "topic", "grade", "date")

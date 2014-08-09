@@ -1,22 +1,20 @@
 //Created By Ilan Godik
 package nightra.mashovNotificator.network.unsafe
 
-import scala.concurrent.Future
-import spray.http._
-import spray.client.pipelining._
-import spray.httpx.unmarshalling._
-import nightra.mashovNotificator.main.Runner
-import nightra.mashovNotificator.network.{Request, Response}
-import nightra.mashovNotificator.network.Request._
-import argonaut.DecodeJson
 import argonaut.Argonaut._
-import spray.http.HttpRequest
-import spray.http.HttpResponse
+import argonaut.DecodeJson
+import nightra.mashovNotificator.network.Request._
+import nightra.mashovNotificator.network.{Runner, FutureConversion, Request, Response}
+import spray.client.pipelining._
+import spray.http._
+import spray.httpx.unmarshalling._
 
-trait RequestRunner {
-  val runner: Runner
+import scala.concurrent.Future
+import scalaz.concurrent.Task
 
-  import runner._
+object RequestsLow {
+
+  import Runner._
 
   def setContentType: ContentType => HttpResponse => HttpResponse =
     contentType => resp => resp.withEntity(HttpEntity(contentType, resp.entity.data))
@@ -27,10 +25,12 @@ trait RequestRunner {
       ~> unmarshal[Resp]
     )
 
-  def runRequest[Resp <: Response : DecodeJson](req: Request[Resp]): Future[Resp] = {
+  def runRequest[Resp <: Response : DecodeJson](req: Request[Resp]): Task[Resp] = {
     val pipeline = soapPipeline[Resp](argonautJsonUnmarshaller[Resp])
     val request = prepareRequest(req)
-    pipeline(request)
+    FutureConversion.toTask(
+      pipeline(request)
+    )
   }
 
   def argonautJsonUnmarshaller[T: DecodeJson] =

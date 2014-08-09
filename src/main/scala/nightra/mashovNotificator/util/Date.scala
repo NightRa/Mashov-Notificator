@@ -3,6 +3,7 @@ package nightra.mashovNotificator.util
 
 import scalaz._
 import scalaz.syntax.semigroup._
+import scalaz.std.anyVal.intInstance
 import Order.orderBy
 import atto._
 import Atto._
@@ -17,12 +18,14 @@ object Date {
   val month: Date => Int = _.month
   val year: Date => Int = _.year
 
+  // --------------------------------------INSTANCES--------------------------------------------------------------------
+
   implicit val dateShow: Show[Date] = Show.showFromToString
   implicit val dateOrder: Order[Date] = orderBy(year) |+| orderBy(month) |+| orderBy(day)
 
   implicit val jsonCodec = casecodec3(Date.apply, Date.unapply)("day", "month", "year")
 
-
+  // --------------------------------------PARSING----------------------------------------------------------------------
 
   // 2014-01-09T00:00:00 -> Right(Date(09,01,2014))
   // TODO: (Date parsing): ABSOLUTELY BAD. SHOULD PASS ERROR INSTEAD OF ASSUMING FORMAT WAS CORRECT.
