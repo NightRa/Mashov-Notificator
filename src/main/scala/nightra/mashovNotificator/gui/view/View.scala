@@ -1,12 +1,9 @@
 package nightra.mashovNotificator.gui.view
 
-import scalafx.scene.Node
+import nightra.mashovNotificator.gui.description.SceneDescription
+
 import scalaz.effect.IO
 
-sealed trait ViewAction
-
-case class SetNodes(nodes: Seq[Node]) extends ViewAction
-
-trait View {
-  def applyViewAction(action: ViewAction): IO[Unit]
+trait View[D <: SceneDescription] {
+  def applyViewAction(action: D#ViewAction): IO[Unit]
 }

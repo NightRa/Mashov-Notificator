@@ -30,6 +30,7 @@ case class BehaveEventsRequest(id: Int, key: Key) extends Request[BehaveEventsRe
       Tag("startDate", "01/01/2001"),
       Tag("endDate", "01/01/2030")
     ))
+  def name: String = "Behavior"
 }
 
 object BehaveEventsRequest {

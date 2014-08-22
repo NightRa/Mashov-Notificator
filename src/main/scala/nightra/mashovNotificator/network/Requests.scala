@@ -2,6 +2,7 @@
 package nightra.mashovNotificator.network
 
 import nightra.mashovNotificator.data.Credentials
+import nightra.mashovNotificator.model.{BehaviorEvent, DomainMorphism, Grade}
 import nightra.mashovNotificator.network.logic.{KeyBundle, RequestKeyGenerator}
 import nightra.mashovNotificator.network.requests._
 import nightra.mashovNotificator.network.unsafe.RequestsLow
@@ -13,22 +14,34 @@ object Requests {
 
   import RequestsLow._
 
-  private def getKey(credentials: Credentials)(ticks: Long)(session: Int) =
-    RequestKeyGenerator.generateKeyBundle(credentials, session, ticks)
-
-  def requestKey(credentials: Credentials): Task[KeyBundle] = {
+  def login(credentials: Credentials, log: Boolean): Task[KeyBundle] = {
     Nondeterminism[Task].mapBoth(
 
-      runRequest(TickRequest),
-      runRequest(LoginRequest(credentials))) {
+      runRequestLog(TickRequest, log),
+      runRequestLog(LoginRequest(credentials), log)) {
 
       case (TickResponse(ticks), LoginResponse(session, _)) =>
-        getKey(credentials)(ticks)(session)
+        RequestKeyGenerator.generateKeyBundle(credentials, session, ticks)
     }
   }
 
-  def requestGrades(keyBundle: KeyBundle): Task[GradesResponse] =
-    runRequest(GradesRequest(keyBundle))
-  def requestBehaviorEvents(keyBundle: KeyBundle): Task[BehaveEventsResponse] =
-    runRequest(BehaveEventsRequest(keyBundle))
+  def requestGrades(keyBundle: KeyBundle, log: Boolean): Task[Seq[Grade]] =
+    runRequestLog(GradesRequest(keyBundle), log)
+      .map(DomainMorphism[GradesResponse, Seq[Grade]])
+
+  def requestBehaviorEvents(keyBundle: KeyBundle, log: Boolean): Task[Seq[BehaviorEvent]] =
+    runRequestLog(BehaveEventsRequest(keyBundle), log)
+      .map(DomainMorphism[BehaveEventsResponse, Seq[BehaviorEvent]])
+
+
+  def requestGradesAndBehaviorWithLogin(credentials: Credentials, log: Boolean): Task[(Seq[Grade], Seq[BehaviorEvent])] = {
+    login(credentials, log).flatMap {
+      keyBundle =>
+
+        Nondeterminism[Task].both(
+          requestGrades(keyBundle, log),
+          requestBehaviorEvents(keyBundle, log)
+        )
+    }
+  }
 }

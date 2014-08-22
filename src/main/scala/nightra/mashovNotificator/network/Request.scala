@@ -14,6 +14,7 @@ trait Response
 
 trait Request[Resp <: Response] {
   def toXML: Tag
+  def name: String
 }
 
 trait ReaderCompanion[T] {

@@ -1,15 +1,14 @@
 package nightra.mashovNotificator.gui.view.mainScene
 
-import nightra.mashovNotificator.gui.view.{SetNodes, ViewAction, View}
-import nightra.mashovNotificator.model.{BehaviorEvent, Grade}
-import nightra.mashovNotificator.util.Date
+import nightra.mashovNotificator.gui.description.MainSceneDescription
+import nightra.mashovNotificator.gui.view.View
 
 import scalafx.application.Platform
 import scalafx.beans.property.ObjectProperty
 import scalafx.scene.{Node, Scene}
 import scalaz.effect.IO
 
-class MainScene(initial: ViewAction) extends Scene(800, 600) with View {
+class MainScene(initial: MainSceneViewAction) extends Scene(800, 600) with View[MainSceneDescription.type] {
   sceneSelf =>
 
   // --------------------------------------PROPERTIES-------------------------------------------------------------------
@@ -31,7 +30,7 @@ class MainScene(initial: ViewAction) extends Scene(800, 600) with View {
     Platform.runLater(eventNodesProperty.value = nodes)
   }
 
-  def applyViewAction(action: ViewAction): IO[Unit] = action match {
+  def applyViewAction(action: MainSceneViewAction): IO[Unit] = action match {
     case SetNodes(nodes) => setNodes(nodes)
   }
 }

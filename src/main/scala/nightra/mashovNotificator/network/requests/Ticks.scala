@@ -16,4 +16,5 @@ object TickResponse extends ResponseCompanion[TickResponse] {
 
 case object TickRequest extends Request[TickResponse] {
   def toXML = Tag("GetTicks")
+  def name: String = "Tick"
 }

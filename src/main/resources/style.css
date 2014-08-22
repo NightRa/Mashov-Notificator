@@ -7,12 +7,19 @@
     -fx-RedLight: #d9534f;
 }
 
-.contentTab {
+.mainPane {
     -fx-background-image: url('blue-grid.jpg');
     -fx-orientation: horizontal;
     -fx-alignment: center;
     -fx-hgap: 10;
     -fx-vgap: 20;
+    -fx-padding: 30;
+}
+
+.loginGrid {
+    -fx-alignment: center;
+    -fx-hgap: 30;
+    -fx-vgap: 15;
     -fx-padding: 30;
 }
 
@@ -48,6 +55,13 @@
     -fx-background-insets: -2;
     -fx-translate-y: -2;
     -fx-alignment: top-center;
+}
+
+.footer {
+    -fx-background-radius: 0 0 10 10;
+    -fx-padding: 10;
+    -fx-translate-y: 2;
+    -fx-alignment: center;
 }
 
 .header-green {

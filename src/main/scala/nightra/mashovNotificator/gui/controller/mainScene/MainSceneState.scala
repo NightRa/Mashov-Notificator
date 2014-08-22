@@ -1,4 +1,4 @@
-package nightra.mashovNotificator.gui.view.mainScene
+package nightra.mashovNotificator.gui.controller.mainScene
 
 import nightra.mashovNotificator.language.EventStrings
 import nightra.mashovNotificator.model.Event

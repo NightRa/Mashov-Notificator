@@ -24,7 +24,7 @@ class MainSceneContent(events: ObjectProperty[Seq[Node]]) extends StackPane {
         content = new ScrollPane() {
           scrollPaneSelf =>
           content = new FlowPane {
-            styleClass = Seq("contentTab")
+            styleClass = Seq("mainPane")
             content = events.get
             events.onChange(content = events.get)
 
@@ -46,7 +46,7 @@ class MainSceneContent(events: ObjectProperty[Seq[Node]]) extends StackPane {
 
   def refreshImage = new ImageView(new Image("refresh.png")) {
     styleClass = Seq("refresh-button")
-    alignment = Pos.TOP_RIGHT
+    alignmentInParent = Pos.TOP_RIGHT
     margin = Insets(5)
   }
 

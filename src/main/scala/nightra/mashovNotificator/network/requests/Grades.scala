@@ -25,6 +25,7 @@ case class GradesRequest(id: Int, key: Key) extends Request[GradesResponse] {
     Tag("startDate", "01/01/2001"),
     Tag("endDate", "01/01/2030")
   ))
+  def name: String = "Grades"
 }
 
 object GradesRequest {

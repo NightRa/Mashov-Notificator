@@ -34,6 +34,7 @@ case class LoginRequest(id: Int, password: String, school: Int, year: Int) exten
       Tag("comp", "android_id"),
       Tag("Code", "87-4B-D3-81-D4-D7-10-61-53-DA-90-9C-56-C7-07-84-70-CD-39-F6")
     ))
+  def name: String = "Login"
 }
 
 object LoginRequest {

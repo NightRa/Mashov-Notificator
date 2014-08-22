@@ -11,6 +11,7 @@ import spray.httpx.unmarshalling._
 
 import scala.concurrent.Future
 import scalaz.concurrent.Task
+import scalaz.syntax.bind._
 
 object RequestsLow {
 
@@ -31,6 +32,14 @@ object RequestsLow {
     FutureConversion.toTask(
       pipeline(request)
     )
+  }
+
+  def runRequestLog[Resp <: Response : DecodeJson](req: Request[Resp], log: Boolean): Task[Resp] = {
+    val task = runRequest(req)
+    if (log)
+      Task.delay(println(s"Starting ${req.name} task.")) >> task.onFinish(_ => Task.delay(println(s"Finished ${req.name} task.")))
+    else
+      task
   }
 
   def argonautJsonUnmarshaller[T: DecodeJson] =
