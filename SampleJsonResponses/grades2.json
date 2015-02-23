@@ -1,0 +1,892 @@
+{"allGrades": [
+    {
+        "subjectName": "תנ\"ך ",
+        "Name": "מחצית ב",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 15.0,
+        "teacherName": "ברקאי עפרה",
+        "eDate": "2014-05-21T00:00:00",
+        "visiblefrom": "2014-05-21T00:00:00"
+    },
+    {
+        "subjectName": "תנ\"ך ",
+        "Name": "מתכונת",
+        "grade": 98,
+        "GradeComment": null,
+        "rate": 30.0,
+        "teacherName": "ברקאי עפרה",
+        "eDate": "2014-05-21T00:00:00",
+        "visiblefrom": "2014-05-21T00:00:00"
+    },
+    {
+        "subjectName": "תנ\"ך ",
+        "Name": "ציון כיתה י",
+        "grade": 95,
+        "GradeComment": null,
+        "rate": 25.0,
+        "teacherName": "ברקאי עפרה",
+        "eDate": "2014-05-21T00:00:00",
+        "visiblefrom": "2014-05-21T00:00:00"
+    },
+    {
+        "subjectName": "תנ\"ך ",
+        "Name": "מחצית א",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 30.0,
+        "teacherName": "ברקאי עפרה",
+        "eDate": "2014-05-21T00:00:00",
+        "visiblefrom": "2014-05-21T00:00:00"
+    },
+    {
+        "subjectName": "תנ\"ך ",
+        "Name": "תלמידאות מחצית ב",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 15.0,
+        "teacherName": "ברקאי עפרה",
+        "eDate": "2014-05-16T00:00:00",
+        "visiblefrom": "2014-05-16T00:00:00"
+    },
+    {
+        "subjectName": "תנ\"ך ",
+        "Name": " שיעורי בית",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "ברקאי עפרה",
+        "eDate": "2014-05-16T00:00:00",
+        "visiblefrom": "2014-05-16T00:00:00"
+    },
+    {
+        "subjectName": "אזרחות ",
+        "Name": "יחס למקצוע",
+        "grade": 80,
+        "GradeComment": null,
+        "rate": 15.0,
+        "teacherName": "מגל אילנית",
+        "eDate": "2014-05-10T00:00:00",
+        "visiblefrom": "2014-05-10T00:00:00"
+    },
+    {
+        "subjectName": "פיסיקה ",
+        "Name": "מעבדה - נפילת גופים",
+        "grade": 0,
+        "GradeComment": "לא הגיש",
+        "rate": 100.0,
+        "teacherName": "סלומון מרדכי",
+        "eDate": "2014-05-08T00:00:00",
+        "visiblefrom": "2014-05-08T00:00:00"
+    },
+    {
+        "subjectName": "אזרחות ",
+        "Name": "עבודה-שסע לאומי",
+        "grade": 0,
+        "GradeComment": null,
+        "rate": 15.0,
+        "teacherName": "מגל אילנית",
+        "eDate": "2014-05-08T00:00:00",
+        "visiblefrom": "2014-05-08T00:00:00"
+    },
+    {
+        "subjectName": "פיסיקה ",
+        "Name": "מעבדה - עדשות",
+        "grade": 0,
+        "GradeComment": null,
+        "rate": 100.0,
+        "teacherName": "סלומון מרדכי",
+        "eDate": "2014-04-14T00:00:00",
+        "visiblefrom": "2014-04-14T00:00:00"
+    },
+    {
+        "subjectName": "מדעי המחשב ",
+        "Name": "מתכונת-תמע",
+        "grade": 74,
+        "GradeComment": null,
+        "rate": 0.0,
+        "teacherName": "גרינוולד אביטל",
+        "eDate": "2014-04-03T00:00:00",
+        "visiblefrom": "2014-04-06T00:00:00"
+    },
+    {
+        "subjectName": "מדעי המחשב ",
+        "Name": "מתכונת",
+        "grade": 90,
+        "GradeComment": null,
+        "rate": 0.0,
+        "teacherName": "גרינוולד אביטל",
+        "eDate": "2014-04-03T00:00:00",
+        "visiblefrom": "2014-04-06T00:00:00"
+    },
+    {
+        "subjectName": "מדעי המחשב ",
+        "Name": "מתכונת-עיצוב",
+        "grade": 98,
+        "GradeComment": null,
+        "rate": 0.0,
+        "teacherName": "גרינוולד אביטל",
+        "eDate": "2014-04-01T00:00:00",
+        "visiblefrom": "2014-04-03T00:00:00"
+    },
+    {
+        "subjectName": "עברית ",
+        "Name": "בוחן-תפקיד תחבירי של פסוקיות",
+        "grade": 95,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "שרף מירב",
+        "eDate": "2014-03-30T00:00:00",
+        "visiblefrom": "2014-03-30T00:00:00"
+    },
+    {
+        "subjectName": "עברית ",
+        "Name": "תרגיל שב- מטלת כתיבה (התנדבות מתבגרים)",
+        "grade": 0,
+        "GradeComment": null,
+        "rate": 5.0,
+        "teacherName": "שרף מירב",
+        "eDate": "2014-03-29T00:00:00",
+        "visiblefrom": "2014-03-29T00:00:00"
+    },
+    {
+        "subjectName": "אנגלית MODULE F 5",
+        "Name": "the road not taken : worksheets",
+        "grade": 98,
+        "GradeComment": null,
+        "rate": 15.0,
+        "teacherName": "שורק פיטר",
+        "eDate": "2014-03-27T00:00:00",
+        "visiblefrom": "2014-03-31T00:00:00"
+    },
+    {
+        "subjectName": "אנגלית MODULE F 5",
+        "Name": "Composiion : voting Obligatory?",
+        "grade": 0,
+        "GradeComment": null,
+        "rate": 8.0,
+        "teacherName": "שורק פיטר",
+        "eDate": "2014-03-26T00:00:00",
+        "visiblefrom": "2014-03-27T00:00:00"
+    },
+    {
+        "subjectName": "כימיה ",
+        "Name": "מבחן טעם של כימיה",
+        "grade": 98,
+        "GradeComment": null,
+        "rate": 50.0,
+        "teacherName": "גורליק אלנה",
+        "eDate": "2014-03-25T00:00:00",
+        "visiblefrom": "2014-04-04T00:00:00"
+    },
+    {
+        "subjectName": "פיסיקה ",
+        "Name": "בוחן - עדשות",
+        "grade": 95,
+        "GradeComment": null,
+        "rate": 23.0,
+        "teacherName": "סלומון מרדכי",
+        "eDate": "2014-03-14T00:00:00",
+        "visiblefrom": "2014-03-14T00:00:00"
+    },
+    {
+        "subjectName": "עברית ",
+        "Name": "מבחן רבעון ג",
+        "grade": 97,
+        "GradeComment": null,
+        "rate": 50.0,
+        "teacherName": "שרף מירב",
+        "eDate": "2014-03-11T00:00:00",
+        "visiblefrom": "2014-03-11T00:00:00"
+    },
+    {
+        "subjectName": "פיסיקה ",
+        "Name": "בוחן - ש.מעב. הסחה / קונית / עגלה",
+        "grade": 93,
+        "GradeComment": null,
+        "rate": 23.0,
+        "teacherName": "סלומון מרדכי",
+        "eDate": "2014-03-08T00:00:00",
+        "visiblefrom": "2014-03-08T00:00:00"
+    },
+    {
+        "subjectName": "פיסיקה ",
+        "Name": "בוחן - קרונית או מע' גופים + חיכוך",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 23.0,
+        "teacherName": "סלומון מרדכי",
+        "eDate": "2014-03-07T00:00:00",
+        "visiblefrom": "2014-03-07T00:00:00"
+    },
+    {
+        "subjectName": "כימיה ",
+        "Name": "מעבדה נחש שחור",
+        "grade": 89,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "גורליק אלנה",
+        "eDate": "2014-03-06T00:00:00",
+        "visiblefrom": "2014-03-09T00:00:00"
+    },
+    {
+        "subjectName": "תנ\"ך ",
+        "Name": "נבואה חוק וקשן",
+        "grade": 98,
+        "GradeComment": null,
+        "rate": 40.0,
+        "teacherName": "ברקאי עפרה",
+        "eDate": "2014-03-05T00:00:00",
+        "visiblefrom": "2014-03-22T00:00:00"
+    },
+    {
+        "subjectName": "כימיה ",
+        "Name": "בחן חלבונים",
+        "grade": 95,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "גורליק אלנה",
+        "eDate": "2014-03-03T00:00:00",
+        "visiblefrom": "2014-03-09T00:00:00"
+    },
+    {
+        "subjectName": "ספרות ",
+        "Name": "מבחן על שירת האהבה",
+        "grade": 92,
+        "GradeComment": null,
+        "rate": 45.0,
+        "teacherName": "פרידמן דורית",
+        "eDate": "2014-03-03T00:00:00",
+        "visiblefrom": "2014-03-03T00:00:00"
+    },
+    {
+        "subjectName": "ספרות ",
+        "Name": "תפקוד כתה מחצית ב",
+        "grade": 95,
+        "GradeComment": null,
+        "rate": 20.0,
+        "teacherName": "פרידמן דורית",
+        "eDate": "2014-03-02T00:00:00",
+        "visiblefrom": "2014-03-02T00:00:00"
+    },
+    {
+        "subjectName": "עברית ",
+        "Name": "יחס למקצוע",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 5.0,
+        "teacherName": "שרף מירב",
+        "eDate": "2014-02-27T00:00:00",
+        "visiblefrom": "2014-02-27T00:00:00"
+    },
+    {
+        "subjectName": "פיסיקה ",
+        "Name": "בוחן - תנועת מעלית",
+        "grade": 82,
+        "GradeComment": null,
+        "rate": 23.0,
+        "teacherName": "סלומון מרדכי",
+        "eDate": "2014-02-20T00:00:00",
+        "visiblefrom": "2014-02-20T00:00:00"
+    },
+    {
+        "subjectName": "אנגלית MODULE F 5",
+        "Name": "TEst:AMS",
+        "grade": 94,
+        "GradeComment": null,
+        "rate": 22.0,
+        "teacherName": "שורק פיטר",
+        "eDate": "2014-02-19T00:00:00",
+        "visiblefrom": "2014-03-06T00:00:00"
+    },
+    {
+        "subjectName": "כימיה ",
+        "Name": "מבדק סוכרים",
+        "grade": 90,
+        "GradeComment": null,
+        "rate": 5.0,
+        "teacherName": "גורליק אלנה",
+        "eDate": "2014-02-17T00:00:00",
+        "visiblefrom": "2014-02-24T00:00:00"
+    },
+    {
+        "subjectName": "אזרחות ",
+        "Name": "מבחן מסכם מדינה יהודית",
+        "grade": 94,
+        "GradeComment": null,
+        "rate": 40.0,
+        "teacherName": "מגל אילנית",
+        "eDate": "2014-02-14T00:00:00",
+        "visiblefrom": "2014-03-01T00:00:00"
+    },
+    {
+        "subjectName": "עברית ",
+        "Name": "תרגיל שב-אמצעים רטוריים",
+        "grade": 0,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "שרף מירב",
+        "eDate": "2014-02-13T00:00:00",
+        "visiblefrom": "2014-02-13T00:00:00"
+    },
+    {
+        "subjectName": "תנ\"ך ",
+        "Name": "בוחן חוקי העבד",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 20.0,
+        "teacherName": "ברקאי עפרה",
+        "eDate": "2014-02-12T00:00:00",
+        "visiblefrom": "2014-02-12T00:00:00"
+    },
+    {
+        "subjectName": "אנגלית MODULE F 5",
+        "Name": "Bridging Miller and AMS",
+        "grade": 95,
+        "GradeComment": null,
+        "rate": 5.0,
+        "teacherName": "שורק פיטר",
+        "eDate": "2014-02-10T00:00:00",
+        "visiblefrom": "2014-02-12T00:00:00"
+    },
+    {
+        "subjectName": "אנגלית MODULE F 5",
+        "Name": "AMS reflection",
+        "grade": 70,
+        "GradeComment": null,
+        "rate": 4.0,
+        "teacherName": "שורק פיטר",
+        "eDate": "2014-02-06T00:00:00",
+        "visiblefrom": "2014-02-07T00:00:00"
+    },
+    {
+        "subjectName": "אזרחות ",
+        "Name": "גישות וחקיקה יהודית",
+        "grade": 89,
+        "GradeComment": null,
+        "rate": 15.0,
+        "teacherName": "מגל אילנית",
+        "eDate": "2014-01-24T00:00:00",
+        "visiblefrom": "2014-02-05T00:00:00"
+    },
+    {
+        "subjectName": "עברית ",
+        "Name": "בוחן- פשוט לסוגיו+הגזרות",
+        "grade": 97,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "שרף מירב",
+        "eDate": "2014-01-23T00:00:00",
+        "visiblefrom": "2014-01-23T00:00:00"
+    },
+    {
+        "subjectName": "פיסיקה ",
+        "Name": "ש\"ב - מכניקה - דף תרגילים 3",
+        "grade": 0,
+        "GradeComment": null,
+        "rate": 8.0,
+        "teacherName": "סלומון מרדכי",
+        "eDate": "2014-01-22T00:00:00",
+        "visiblefrom": "2014-01-22T00:00:00"
+    },
+    {
+        "subjectName": "כימיה ",
+        "Name": "בוחן שומנים",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "גורליק אלנה",
+        "eDate": "2014-01-21T00:00:00",
+        "visiblefrom": "2014-01-28T00:00:00"
+    },
+    {
+        "subjectName": "כימיה ",
+        "Name": "מעבדה חומרים בשקית",
+        "grade": 90,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "גורליק אלנה",
+        "eDate": "2014-01-20T00:00:00",
+        "visiblefrom": "2014-01-26T00:00:00"
+    },
+    {
+        "subjectName": "כימיה ",
+        "Name": "מעבדה הגן הכימי",
+        "grade": 89,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "גורליק אלנה",
+        "eDate": "2014-01-19T00:00:00",
+        "visiblefrom": "2014-01-26T00:00:00"
+    },
+    {
+        "subjectName": "עברית ",
+        "Name": "בוחן-עד משפט פשוט בעל חלק כולל",
+        "grade": 92,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "שרף מירב",
+        "eDate": "2014-01-08T00:00:00",
+        "visiblefrom": "2014-01-08T00:00:00"
+    },
+    {
+        "subjectName": "תנ\"ך ",
+        "Name": "סיפורי האבות ומלכים ב",
+        "grade": 98,
+        "GradeComment": null,
+        "rate": 40.0,
+        "teacherName": "ברקאי עפרה",
+        "eDate": "2014-01-05T00:00:00",
+        "visiblefrom": "2014-01-05T00:00:00"
+    },
+    {
+        "subjectName": "תנ\"ך ",
+        "Name": "תלמידאות",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "ברקאי עפרה",
+        "eDate": "2014-01-05T00:00:00",
+        "visiblefrom": "2014-01-05T00:00:00"
+    },
+    {
+        "subjectName": "עברית ",
+        "Name": "מבחן רבעון ב'",
+        "grade": 94,
+        "GradeComment": null,
+        "rate": 30.0,
+        "teacherName": "שרף מירב",
+        "eDate": "2014-01-02T00:00:00",
+        "visiblefrom": "2014-01-02T00:00:00"
+    },
+    {
+        "subjectName": "כימיה ",
+        "Name": "כיתה+ש\"ב",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 5.0,
+        "teacherName": "גורליק אלנה",
+        "eDate": "2014-01-02T00:00:00",
+        "visiblefrom": "2014-01-05T00:00:00"
+    },
+    {
+        "subjectName": "אנגלית MODULE F 5",
+        "Name": "AMSACt one Test:",
+        "grade": 94,
+        "GradeComment": null,
+        "rate": 25.0,
+        "teacherName": "שורק פיטר",
+        "eDate": "2013-12-30T00:00:00",
+        "visiblefrom": "2014-01-07T00:00:00"
+    },
+    {
+        "subjectName": "ספרות ",
+        "Name": "תפקוד כתה",
+        "grade": 90,
+        "GradeComment": null,
+        "rate": 5.0,
+        "teacherName": "פרידמן דורית",
+        "eDate": "2013-12-29T00:00:00",
+        "visiblefrom": "2013-12-29T00:00:00"
+    },
+    {
+        "subjectName": "פיסיקה ",
+        "Name": "בוחן - זריקה אופקית",
+        "grade": 99,
+        "GradeComment": null,
+        "rate": 16.0,
+        "teacherName": "סלומון מרדכי",
+        "eDate": "2013-12-27T00:00:00",
+        "visiblefrom": "2013-12-27T00:00:00"
+    },
+    {
+        "subjectName": "פיסיקה ",
+        "Name": "בוחן - חוקי ניוטון Tmax=100N",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 16.0,
+        "teacherName": "סלומון מרדכי",
+        "eDate": "2013-12-27T00:00:00",
+        "visiblefrom": "2013-12-27T00:00:00"
+    },
+    {
+        "subjectName": "פיסיקה ",
+        "Name": "ש\"ב ממוצע 4 תר' בגרות חוק סנל",
+        "grade": 0,
+        "GradeComment": null,
+        "rate": 4.0,
+        "teacherName": "סלומון מרדכי",
+        "eDate": "2013-12-26T00:00:00",
+        "visiblefrom": "2013-12-26T00:00:00"
+    },
+    {
+        "subjectName": "אזרחות ",
+        "Name": "מבחן מסכם דמווקרטיה 2",
+        "grade": 87,
+        "GradeComment": null,
+        "rate": 30.0,
+        "teacherName": "מגל אילנית",
+        "eDate": "2013-12-23T00:00:00",
+        "visiblefrom": "2014-01-12T00:00:00"
+    },
+    {
+        "subjectName": "אזרחות ",
+        "Name": "תרגיל הגשה-גישות",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 5.0,
+        "teacherName": "מגל אילנית",
+        "eDate": "2013-12-23T00:00:00",
+        "visiblefrom": "2014-01-12T00:00:00"
+    },
+    {
+        "subjectName": "אזרחות ",
+        "Name": "תלמידאות",
+        "grade": 90,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "מגל אילנית",
+        "eDate": "2013-12-23T00:00:00",
+        "visiblefrom": "2014-01-12T00:00:00"
+    },
+    {
+        "subjectName": "ספרות ",
+        "Name": "מבחן על התפסן",
+        "grade": 60,
+        "GradeComment": null,
+        "rate": 40.0,
+        "teacherName": "פרידמן דורית",
+        "eDate": "2013-12-21T00:00:00",
+        "visiblefrom": "2013-12-12T00:00:00"
+    },
+    {
+        "subjectName": "כימיה ",
+        "Name": "מבחן חימצון חיזור",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 35.0,
+        "teacherName": "גורליק אלנה",
+        "eDate": "2013-12-17T00:00:00",
+        "visiblefrom": "2013-12-27T00:00:00"
+    },
+    {
+        "subjectName": "אנגלית MODULE F 5",
+        "Name": "worksheets#10,11,15",
+        "grade": 0,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "שורק פיטר",
+        "eDate": "2013-12-15T00:00:00",
+        "visiblefrom": "2013-12-15T00:00:00"
+    },
+    {
+        "subjectName": "אזרחות ",
+        "Name": "בוחן-הצדקות למדינת לאום+לאומיות",
+        "grade": 92,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "מגל אילנית",
+        "eDate": "2013-12-06T00:00:00",
+        "visiblefrom": "2013-12-14T00:00:00"
+    },
+    {
+        "subjectName": "אנגלית MODULE F 5",
+        "Name": "All My Sons : HOTS 1",
+        "grade": 95,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "שורק פיטר",
+        "eDate": "2013-11-27T00:00:00",
+        "visiblefrom": "2013-12-05T00:00:00"
+    },
+    {
+        "subjectName": "אנגלית MODULE F 5",
+        "Name": "All My Sons: Lots 1",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "שורק פיטר",
+        "eDate": "2013-11-27T00:00:00",
+        "visiblefrom": "2013-12-05T00:00:00"
+    },
+    {
+        "subjectName": "כימיה ",
+        "Name": "מעבדה טיטרציה",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "גורליק אלנה",
+        "eDate": "2013-11-20T00:00:00",
+        "visiblefrom": "2013-12-05T00:00:00"
+    },
+    {
+        "subjectName": "אנגלית MODULE F 5",
+        "Name": "Test Nov.18",
+        "grade": 97,
+        "GradeComment": null,
+        "rate": 15.0,
+        "teacherName": "שורק פיטר",
+        "eDate": "2013-11-18T00:00:00",
+        "visiblefrom": "2013-11-25T00:00:00"
+    },
+    {
+        "subjectName": "עברית ",
+        "Name": "תרגיל כיתה- הגזרות עד נל\"א נלי\"ה",
+        "grade": 92,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "שרף מירב",
+        "eDate": "2013-11-16T00:00:00",
+        "visiblefrom": "2013-11-16T00:00:00"
+    },
+    {
+        "subjectName": "פיסיקה ",
+        "Name": "בוחן - נפילה חפשית",
+        "grade": 98,
+        "GradeComment": null,
+        "rate": 16.0,
+        "teacherName": "סלומון מרדכי",
+        "eDate": "2013-11-14T00:00:00",
+        "visiblefrom": "2013-11-20T00:00:00"
+    },
+    {
+        "subjectName": "פיסיקה ",
+        "Name": "בוחן - חיבור ווקטורים",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 16.0,
+        "teacherName": "סלומון מרדכי",
+        "eDate": "2013-11-14T00:00:00",
+        "visiblefrom": "2013-11-22T00:00:00"
+    },
+    {
+        "subjectName": "פיסיקה ",
+        "Name": "בוחן - חוק סנל",
+        "grade": 93,
+        "GradeComment": null,
+        "rate": 16.0,
+        "teacherName": "סלומון מרדכי",
+        "eDate": "2013-11-14T00:00:00",
+        "visiblefrom": "2013-11-23T00:00:00"
+    },
+    {
+        "subjectName": "עברית ",
+        "Name": "מבחן רבעון א",
+        "grade": 91,
+        "GradeComment": null,
+        "rate": 30.0,
+        "teacherName": "שרף מירב",
+        "eDate": "2013-11-12T00:00:00",
+        "visiblefrom": "2013-11-12T00:00:00"
+    },
+    {
+        "subjectName": "אזרחות ",
+        "Name": "מבחן מסכם דמוקרטיה",
+        "grade": 80,
+        "GradeComment": null,
+        "rate": 20.0,
+        "teacherName": "מגל אילנית",
+        "eDate": "2013-11-11T00:00:00",
+        "visiblefrom": "2013-11-26T00:00:00"
+    },
+    {
+        "subjectName": "אנגלית MODULE F 5",
+        "Name": "Mr.Know all :Test",
+        "grade": 99,
+        "GradeComment": null,
+        "rate": 20.0,
+        "teacherName": "שורק פיטר",
+        "eDate": "2013-11-08T00:00:00",
+        "visiblefrom": "2013-11-15T00:00:00"
+    },
+    {
+        "subjectName": "תנ\"ך ",
+        "Name": "בראשית ומלכים א",
+        "grade": 94,
+        "GradeComment": null,
+        "rate": 35.0,
+        "teacherName": "ברקאי עפרה",
+        "eDate": "2013-11-05T00:00:00",
+        "visiblefrom": "2013-11-05T00:00:00"
+    },
+    {
+        "subjectName": "כימיה ",
+        "Name": "מבחן חומצות",
+        "grade": 96,
+        "GradeComment": null,
+        "rate": 35.0,
+        "teacherName": "גורליק אלנה",
+        "eDate": "2013-11-05T00:00:00",
+        "visiblefrom": "2013-11-08T00:00:00"
+    },
+    {
+        "subjectName": "מדעי המחשב ",
+        "Name": "מבחן 1-טנמ+רקורסיה+יעילות",
+        "grade": 89,
+        "GradeComment": null,
+        "rate": 27.0,
+        "teacherName": "גרינוולד אביטל",
+        "eDate": "2013-11-04T00:00:00",
+        "visiblefrom": "2013-11-06T00:00:00"
+    },
+    {
+        "subjectName": "אנגלית MODULE F 5",
+        "Name": "Know all HOTS",
+        "grade": 0,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "שורק פיטר",
+        "eDate": "2013-10-24T00:00:00",
+        "visiblefrom": "2013-10-24T00:00:00"
+    },
+    {
+        "subjectName": "אנגלית MODULE F 5",
+        "Name": "LOG: KNOWALL- LOTS",
+        "grade": 0,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "שורק פיטר",
+        "eDate": "2013-10-24T00:00:00",
+        "visiblefrom": "2013-10-24T00:00:00"
+    },
+    {
+        "subjectName": "עברית ",
+        "Name": "בוחן- עד תאורים",
+        "grade": 98,
+        "GradeComment": null,
+        "rate": 15.0,
+        "teacherName": "שרף מירב",
+        "eDate": "2013-10-22T00:00:00",
+        "visiblefrom": "2013-10-22T00:00:00"
+    },
+    {
+        "subjectName": "ספרות ",
+        "Name": "מבחן על אנטיגונה",
+        "grade": 89,
+        "GradeComment": null,
+        "rate": 35.0,
+        "teacherName": "פרידמן דורית",
+        "eDate": "2013-10-20T00:00:00",
+        "visiblefrom": "2013-10-20T00:00:00"
+    },
+    {
+        "subjectName": "כימיה ",
+        "Name": "בוחן סטוכיו",
+        "grade": 90,
+        "GradeComment": null,
+        "rate": 5.0,
+        "teacherName": "גורליק אלנה",
+        "eDate": "2013-10-10T00:00:00",
+        "visiblefrom": "2013-10-15T00:00:00"
+    },
+    {
+        "subjectName": "אזרחות ",
+        "Name": "בוחן הגדרות פלורליזם",
+        "grade": 97,
+        "GradeComment": null,
+        "rate": 10.0,
+        "teacherName": "מגל אילנית",
+        "eDate": "2013-10-09T00:00:00",
+        "visiblefrom": "2013-10-27T00:00:00"
+    },
+    {
+        "subjectName": "אנגלית MODULE F 5",
+        "Name": "vocab quiz",
+        "grade": 98,
+        "GradeComment": null,
+        "rate": 3.0,
+        "teacherName": "שורק פיטר",
+        "eDate": "2013-10-07T00:00:00",
+        "visiblefrom": "2013-10-07T00:00:00"
+    },
+    {
+        "subjectName": "אנגלית MODULE F 5",
+        "Name": "Body Language: composition",
+        "grade": 0,
+        "GradeComment": null,
+        "rate": 5.0,
+        "teacherName": "שורק פיטר",
+        "eDate": "2013-10-07T00:00:00",
+        "visiblefrom": "2013-10-07T00:00:00"
+    },
+    {
+        "subjectName": "פיסיקה ",
+        "Name": "מעבדה - חוק סנל",
+        "grade": 78,
+        "GradeComment": null,
+        "rate": 5.0,
+        "teacherName": "סלומון מרדכי",
+        "eDate": "2013-10-03T00:00:00",
+        "visiblefrom": "2013-11-28T00:00:00"
+    },
+    {
+        "subjectName": "אזרחות ",
+        "Name": "בוחן-שלטון החוק",
+        "grade": 87,
+        "GradeComment": null,
+        "rate": 15.0,
+        "teacherName": "מגל אילנית",
+        "eDate": "2013-10-02T00:00:00",
+        "visiblefrom": "2013-10-14T00:00:00"
+    },
+    {
+        "subjectName": "ספרות ",
+        "Name": "בוחן על צפירה",
+        "grade": 96,
+        "GradeComment": null,
+        "rate": 20.0,
+        "teacherName": "פרידמן דורית",
+        "eDate": "2013-10-02T00:00:00",
+        "visiblefrom": "2013-09-30T00:00:00"
+    },
+    {
+        "subjectName": "כימיה ",
+        "Name": "מעבדה נחושת חמצנית",
+        "grade": 90,
+        "GradeComment": null,
+        "rate": 5.0,
+        "teacherName": "גורליק אלנה",
+        "eDate": "2013-09-23T00:00:00",
+        "visiblefrom": "2013-10-15T00:00:00"
+    },
+    {
+        "subjectName": "עברית ",
+        "Name": "בוחן- חזרה על דרכי תצורה",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 15.0,
+        "teacherName": "שרף מירב",
+        "eDate": "2013-09-17T00:00:00",
+        "visiblefrom": "2013-09-17T00:00:00"
+    },
+    {
+        "subjectName": "כימיה ",
+        "Name": "סטוכיו מבדק",
+        "grade": 100,
+        "GradeComment": null,
+        "rate": 5.0,
+        "teacherName": "גורליק אלנה",
+        "eDate": "2013-09-12T00:00:00",
+        "visiblefrom": "2013-09-23T00:00:00"
+    },
+    {
+        "subjectName": "אנגלית MODULE F 5",
+        "Name": "LOG:The Enemy",
+        "grade": 94,
+        "GradeComment": null,
+        "rate": 7.0,
+        "teacherName": "שורק פיטר",
+        "eDate": "2013-09-02T00:00:00",
+        "visiblefrom": "2013-09-02T00:00:00"
+    },
+    {
+        "subjectName": "פיסיקה ",
+        "Name": "ש\"ב - ממוצע 11 תרגילים במכניקה",
+        "grade": 0,
+        "GradeComment": null,
+        "rate": 11.0,
+        "teacherName": "סלומון מרדכי",
+        "eDate": "2013-08-28T00:00:00",
+        "visiblefrom": "2013-10-25T00:00:00"
+    }
+]}

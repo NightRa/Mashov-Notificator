@@ -1,0 +1,537 @@
+{ "tblTimeTable": [
+    {
+        "groupId": 11011008,
+        "day": 1,
+        "lesson": 0,
+        "studentId": 316315332,
+        "groupName": "ספרות ",
+        "subjectName": "ספרות \nפרידמן דורית \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11011008,
+        "day": 1,
+        "lesson": 1,
+        "studentId": 316315332,
+        "groupName": "ספרות ",
+        "subjectName": "ספרות \nפרידמן דורית \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11019004,
+        "day": 1,
+        "lesson": 2,
+        "studentId": 316315332,
+        "groupName": "חינוך גופני ",
+        "subjectName": "חינוך גופני \nברק דובי \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11019004,
+        "day": 1,
+        "lesson": 3,
+        "studentId": 316315332,
+        "groupName": "חינוך גופני ",
+        "subjectName": "חינוך גופני \nברק דובי \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11051011,
+        "day": 1,
+        "lesson": 4,
+        "studentId": 316315332,
+        "groupName": "מתמטיקה 5 ",
+        "subjectName": "מתמטיקה 5 \nדירקטוביץ מירה \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11051011,
+        "day": 1,
+        "lesson": 5,
+        "studentId": 316315332,
+        "groupName": "מתמטיקה 5 ",
+        "subjectName": "מתמטיקה 5 \nדירקטוביץ מירה \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11052001,
+        "day": 1,
+        "lesson": 6,
+        "studentId": 316315332,
+        "groupName": "פיסיקה ",
+        "subjectName": "פיסיקה \nסלומון מרדכי \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11052001,
+        "day": 1,
+        "lesson": 7,
+        "studentId": 316315332,
+        "groupName": "פיסיקה ",
+        "subjectName": "פיסיקה \nסלומון מרדכי \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11052001,
+        "day": 2,
+        "lesson": 0,
+        "studentId": 316315332,
+        "groupName": "פיסיקה ",
+        "subjectName": "פיסיקה \nסלומון מרדכי \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11052001,
+        "day": 2,
+        "lesson": 1,
+        "studentId": 316315332,
+        "groupName": "פיסיקה ",
+        "subjectName": "פיסיקה \nסלומון מרדכי \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11011008,
+        "day": 2,
+        "lesson": 2,
+        "studentId": 316315332,
+        "groupName": "ספרות ",
+        "subjectName": "ספרות \nפרידמן דורית \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11028005,
+        "day": 2,
+        "lesson": 3,
+        "studentId": 316315332,
+        "groupName": "עברית ",
+        "subjectName": "עברית \nעוז לימור \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11193003,
+        "day": 2,
+        "lesson": 5,
+        "studentId": 316315332,
+        "groupName": "אנגלית MODULE F 5 ",
+        "subjectName": "אנגלית MODULE F 5 \nשורק פיטר \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11193003,
+        "day": 2,
+        "lesson": 6,
+        "studentId": 316315332,
+        "groupName": "אנגלית MODULE F 5 ",
+        "subjectName": "אנגלית MODULE F 5 \nשורק פיטר \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11053001,
+        "day": 2,
+        "lesson": 7,
+        "studentId": 316315332,
+        "groupName": "כימיה ",
+        "subjectName": "כימיה \nגורליק אלנה \n \n מדעי המחשב \nגרינוולד אביטל \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11053001,
+        "day": 2,
+        "lesson": 8,
+        "studentId": 316315332,
+        "groupName": "כימיה ",
+        "subjectName": "כימיה \nגורליק אלנה \n \n מדעי המחשב \nגרינוולד אביטל \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11044001,
+        "day": 2,
+        "lesson": 9,
+        "studentId": 316315332,
+        "groupName": "מדעי המחשב ",
+        "subjectName": "מדעי המחשב \nגרינוולד אביטל \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11044001,
+        "day": 2,
+        "lesson": 10,
+        "studentId": 316315332,
+        "groupName": "מדעי המחשב ",
+        "subjectName": "מדעי המחשב \nגרינוולד אביטל \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11028005,
+        "day": 3,
+        "lesson": 1,
+        "studentId": 316315332,
+        "groupName": "עברית ",
+        "subjectName": "עברית \nעוז לימור \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11136003,
+        "day": 3,
+        "lesson": 3,
+        "studentId": 316315332,
+        "groupName": "חינוך ",
+        "subjectName": "חינוך \nחלפון חגית \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11044001,
+        "day": 3,
+        "lesson": 4,
+        "studentId": 316315332,
+        "groupName": "מדעי המחשב ",
+        "subjectName": "מדעי המחשב \nגרינוולד אביטל \n \n כימיה \nגורליק אלנה \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11053001,
+        "day": 3,
+        "lesson": 5,
+        "studentId": 316315332,
+        "groupName": "כימיה ",
+        "subjectName": "כימיה \nגורליק אלנה \n \n מדעי המחשב \nגרינוולד אביטל \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11051011,
+        "day": 3,
+        "lesson": 6,
+        "studentId": 316315332,
+        "groupName": "מתמטיקה 5 ",
+        "subjectName": "מתמטיקה 5 \nדירקטוביץ מירה \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11051011,
+        "day": 3,
+        "lesson": 7,
+        "studentId": 316315332,
+        "groupName": "מתמטיקה 5 ",
+        "subjectName": "מתמטיקה 5 \nדירקטוביץ מירה \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11351002,
+        "day": 3,
+        "lesson": 8,
+        "studentId": 316315332,
+        "groupName": "מתמ'-תרגול ג9 ",
+        "subjectName": "מתמ'-תרגול ג9 \nדירקטוביץ מירה \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11010001,
+        "day": 4,
+        "lesson": 0,
+        "studentId": 316315332,
+        "groupName": "תנ\"ך ",
+        "subjectName": "תנ\"ך \nברקאי עפרה \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11193003,
+        "day": 4,
+        "lesson": 1,
+        "studentId": 316315332,
+        "groupName": "אנגלית MODULE F 5 ",
+        "subjectName": "אנגלית MODULE F 5 \nשורק פיטר \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11028005,
+        "day": 4,
+        "lesson": 2,
+        "studentId": 316315332,
+        "groupName": "עברית ",
+        "subjectName": "עברית \nעוז לימור \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11018006,
+        "day": 4,
+        "lesson": 3,
+        "studentId": 316315332,
+        "groupName": "אזרחות ",
+        "subjectName": "אזרחות \nגבע אודליה \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11052001,
+        "day": 4,
+        "lesson": 4,
+        "studentId": 316315332,
+        "groupName": "פיסיקה ",
+        "subjectName": "פיסיקה \nסלומון מרדכי \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11052001,
+        "day": 4,
+        "lesson": 5,
+        "studentId": 316315332,
+        "groupName": "פיסיקה ",
+        "subjectName": "פיסיקה \nסלומון מרדכי \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11051011,
+        "day": 4,
+        "lesson": 7,
+        "studentId": 316315332,
+        "groupName": "מתמטיקה 5 ",
+        "subjectName": "מתמטיקה 5 \nדירקטוביץ מירה \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11052001,
+        "day": 5,
+        "lesson": 0,
+        "studentId": 316315332,
+        "groupName": "פיסיקה ",
+        "subjectName": "פיסיקה \nסלומון מרדכי \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11052001,
+        "day": 5,
+        "lesson": 1,
+        "studentId": 316315332,
+        "groupName": "פיסיקה ",
+        "subjectName": "פיסיקה \nסלומון מרדכי \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11193003,
+        "day": 5,
+        "lesson": 2,
+        "studentId": 316315332,
+        "groupName": "אנגלית MODULE F 5 ",
+        "subjectName": "אנגלית MODULE F 5 \nשורק פיטר \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11010001,
+        "day": 5,
+        "lesson": 3,
+        "studentId": 316315332,
+        "groupName": "תנ\"ך ",
+        "subjectName": "תנ\"ך \nברקאי עפרה \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11144002,
+        "day": 5,
+        "lesson": 5,
+        "studentId": 316315332,
+        "groupName": "תעבורה ",
+        "subjectName": "תעבורה \nאורטל עופר \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11044001,
+        "day": 5,
+        "lesson": 6,
+        "studentId": 316315332,
+        "groupName": "מדעי המחשב ",
+        "subjectName": "מדעי המחשב \nגרינוולד אביטל \n \n כימיה \nגורליק אלנה \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11044001,
+        "day": 5,
+        "lesson": 7,
+        "studentId": 316315332,
+        "groupName": "מדעי המחשב ",
+        "subjectName": "מדעי המחשב \nגרינוולד אביטל \n \n כימיה \nגורליק אלנה \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11044001,
+        "day": 5,
+        "lesson": 8,
+        "studentId": 316315332,
+        "groupName": "מדעי המחשב ",
+        "subjectName": "מדעי המחשב \nגרינוולד אביטל \n \n כימיה \nגורליק אלנה \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11193003,
+        "day": 6,
+        "lesson": 0,
+        "studentId": 316315332,
+        "groupName": "אנגלית MODULE F 5 ",
+        "subjectName": "אנגלית MODULE F 5 \nשורק פיטר \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11010001,
+        "day": 6,
+        "lesson": 2,
+        "studentId": 316315332,
+        "groupName": "תנ\"ך ",
+        "subjectName": "תנ\"ך \nברקאי עפרה \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11051011,
+        "day": 6,
+        "lesson": 3,
+        "studentId": 316315332,
+        "groupName": "מתמטיקה 5 ",
+        "subjectName": "מתמטיקה 5 \nדירקטוביץ מירה \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    },
+    {
+        "groupId": 11051011,
+        "day": 6,
+        "lesson": 4,
+        "studentId": 316315332,
+        "groupName": "מתמטיקה 5 ",
+        "subjectName": "מתמטיקה 5 \nדירקטוביץ מירה \n",
+        "classCode": "יא",
+        "classNum": 4,
+        "classCodeNum": "יא4"
+    }
+], "tblBell": [
+    {
+        "lessonNumber": 1,
+        "startTime": "08:00:00",
+        "endTime": "08:45:00"
+    },
+    {
+        "lessonNumber": 2,
+        "startTime": "08:45:00",
+        "endTime": "09:30:00"
+    },
+    {
+        "lessonNumber": 3,
+        "startTime": "09:45:00",
+        "endTime": "10:30:00"
+    },
+    {
+        "lessonNumber": 4,
+        "startTime": "10:30:00",
+        "endTime": "11:15:00"
+    },
+    {
+        "lessonNumber": 5,
+        "startTime": "11:30:00",
+        "endTime": "12:15:00"
+    },
+    {
+        "lessonNumber": 6,
+        "startTime": "12:15:00",
+        "endTime": "13:00:00"
+    },
+    {
+        "lessonNumber": 7,
+        "startTime": "13:20:00",
+        "endTime": "14:05:00"
+    },
+    {
+        "lessonNumber": 8,
+        "startTime": "14:05:00",
+        "endTime": "14:50:00"
+    },
+    {
+        "lessonNumber": 9,
+        "startTime": "15:05:00",
+        "endTime": "15:50:00"
+    },
+    {
+        "lessonNumber": 10,
+        "startTime": "15:50:00",
+        "endTime": "16:35:00"
+    }
+] }
