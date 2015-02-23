@@ -9,7 +9,7 @@ import argonaut.{DecodeJson, Parse}
 
 object FileIO {
   def writeFile(content: String, file: File): IO[Unit] = IO {
-    file.getParentFile.mkdirs()
+    file.getAbsoluteFile.getParentFile.mkdirs()
     val writer = new PrintWriter(file, "UTF-8")
     writer.write(content)
     writer.close()

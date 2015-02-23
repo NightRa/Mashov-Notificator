@@ -18,6 +18,7 @@ class MainScene(initial: MainSceneViewAction) extends Scene(800, 600) with View[
   // --------------------------------------INITIALIZATION---------------------------------------------------------------
 
   content = new MainSceneContent(eventNodesProperty) {
+
     prefHeight <== sceneSelf.height
     prefWidth <== sceneSelf.width
   }

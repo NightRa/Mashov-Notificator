@@ -46,7 +46,7 @@ class MainSceneContent(events: ObjectProperty[Seq[Node]]) extends StackPane {
 
   def refreshImage = new ImageView(new Image("refresh.png")) {
     styleClass = Seq("refresh-button")
-    alignmentInParent = Pos.TOP_RIGHT
+    alignmentInParent = Pos.TopRight
     margin = Insets(5)
   }
 

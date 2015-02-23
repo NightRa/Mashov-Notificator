@@ -11,5 +11,6 @@ trait Controller[D <: SceneDescription] {
 
   // ----------------------------------------DERIVED--------------------------------------------------------------------
 
-  def updateSceneState(view: View[D], state: D#State): IO[Unit] = view.applyViewAction(stateToViewAction(state))
+  def updateSceneState(view: View[D], state: D#State): IO[Unit] =
+    view.applyViewAction(stateToViewAction(state))
 }
